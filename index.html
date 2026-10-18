@@ -1,0 +1,1125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>TadaBoo Land</title>
+<meta name="description" content="TadaBoo: curated stationery and ready-to-gift bags, packed by hand. Order online or on WhatsApp.">
+<meta name="theme-color" content="#1E2140">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TadaBoo">
+<meta property="og:title" content="TadaBoo: little things that make you go tada">
+<meta property="og:description" content="Curated stationery and ready-to-gift bags, packed by hand. Pick a gift bag or build your own, and order online or on WhatsApp.">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231E2140'/%3E%3Cpath d='M32 10l5.5 16.5L54 32l-16.5 5.5L32 54l-5.5-16.5L10 32l16.5-5.5z' fill='%23E8B23A'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="img/7pc-aesthetic.webp" fetchpriority="high">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"TadaBoo","description":"Seriously cute stationery, craft kits, squishies and curated gift bags. Little things that make you go TADA!","slogan":"Little things that make you go TADA!","telephone":"+91-97306-24700","areaServed":"IN"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is there a minimum for custom bags?","acceptedAnswer":{"@type":"Answer","text":"Yes. Items you pick for a custom bag must total more than ₹299. You pay only for the items you choose. Ready-made gift bags have no minimum."}},
+{"@type":"Question","name":"How long does delivery take?","acceptedAnswer":{"@type":"Answer","text":"7–10 days from your order, anywhere in India. Checkout shows the expected dates as soon as you enter your PIN code."}},
+{"@type":"Question","name":"Do you deliver?","acceptedAnswer":{"@type":"Answer","text":"Yes, anywhere in India. Orders with items worth ₹999 or more ship free, and ₹499 to ₹998 pay a flat ₹49 anywhere in India. Smaller orders pay ₹49 within Maharashtra and Goa, ₹69 to the rest of India, and ₹99 to the North East, Jammu & Kashmir, Ladakh, Himachal Pradesh, Sikkim and the islands. Checkout shows your charge as soon as you enter your PIN code."}},
+{"@type":"Question","name":"Will I get exactly the colour in the photo?","acceptedAnswer":{"@type":"Answer","text":"Colours, characters or designs may vary with availability. The product type and value always stay the same."}},
+{"@type":"Question","name":"Can I buy single pencils?","acceptedAnswer":{"@type":"Answer","text":"Yes. Our Unicorn and Racing Car 2B pencils come in a box of 12 for ₹109, or as single pencils at ₹15 each."}},
+{"@type":"Question","name":"How do I pay?","acceptedAnswer":{"@type":"Answer","text":"By UPI, for your order total including delivery."}},
+{"@type":"Question","name":"Can I order many return gifts for a party?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add the return-gift bag you like, set the quantity, and send it to us. We'll confirm stock for larger orders."}}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=Figtree:wght@400;500;600&family=Fredoka:wght@700&display=swap">
+<style>
+/* Layout: boutique storefront, one idea per section. Slim header; split hero; round category tiles;
+   gift bags as photo cards that open a detail sheet; a navy "build your own" band; the shop grid;
+   how to order; questions. Orange is kept for the TADA wordmark and prices only. */
+:root{
+  --bg:#FFFFFF; --stone:#F7F4F1; --tile:#F1ECE7; --ink:#1E2140; --muted:#5F6278; --line:#ECE8E4; --line-strong:#CFC8C1;
+  --accent:#E2541A; --price:#B83A0A; --gold:#E8B23A;
+  --btn:#1E2140; --btn-fg:#FFFFFF; --band:#1E2140; --band-fg:#FFFFFF; --band-muted:#C9CBDD;
+  --ok:#1E7A5C; --warn-bg:#FBF1DE;
+  --shadow:0 12px 32px rgba(30,33,64,.12);
+  --f-display:"Bricolage Grotesque","Figtree","Segoe UI",system-ui,sans-serif;
+  --f-body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --f-mark:"Fredoka","Trebuchet MS",system-ui,sans-serif;
+  --max:1200px; --gutter:clamp(16px,3vw,24px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14151F; --stone:#1A1C28; --tile:#232634; --ink:#F4F1EC; --muted:#A9ABBE; --line:#2A2D3D; --line-strong:#454A60;
+  --accent:#FF8A55; --price:#FF9A6A; --gold:#F2C35C;
+  --btn:#F4F1EC; --btn-fg:#14151F; --band:#232634; --band-fg:#F4F1EC; --band-muted:#B9BBCC;
+  --ok:#5AD3B0; --warn-bg:#33291A; --shadow:0 12px 32px rgba(0,0,0,.4); color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#14151F; --stone:#1A1C28; --tile:#232634; --ink:#F4F1EC; --muted:#A9ABBE; --line:#2A2D3D; --line-strong:#454A60;
+  --accent:#FF8A55; --price:#FF9A6A; --gold:#F2C35C;
+  --btn:#F4F1EC; --btn-fg:#14151F; --band:#232634; --band-fg:#F4F1EC; --band-muted:#B9BBCC;
+  --ok:#5AD3B0; --warn-bg:#33291A; --shadow:0 12px 32px rgba(0,0,0,.4); color-scheme:dark }
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+html,body{overflow-x:clip}
+html.lock{overflow:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:var(--f-display);font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.015em}
+h2{font-size:clamp(1.9rem,1.4rem + 1.6vw,2.5rem);line-height:1.1}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--price);outline-offset:3px;border-radius:12px}
+.band :focus-visible{outline-color:var(--band-fg)}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--btn);color:var(--btn-fg);padding:12px 18px;border-radius:999px;font-weight:600}
+.skip:focus{top:12px}
+.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.price{color:var(--price);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.num{font-variant-numeric:tabular-nums}
+section{padding-block:clamp(64px,8vw,96px)}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.head .meta{color:var(--muted);font-size:.95rem}
+
+/* Wordmark */
+.wm{font:700 1.6rem/1 var(--f-mark);display:inline-flex;align-items:center;min-height:44px;white-space:nowrap}
+.wm .t{color:var(--accent);font-style:italic}
+.wm .b{color:var(--ink)}
+.wm .s{color:var(--gold);font-size:.55em;transform:translateY(-.55em);margin:0 1px}
+
+/* Buttons */
+.btn{border:1px solid var(--btn);border-radius:999px;min-height:50px;padding:0 26px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 1rem var(--f-body);cursor:pointer;background:var(--btn);color:var(--btn-fg);transition:transform .15s ease,opacity .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn.line{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+.btn.sm{min-height:44px;padding:0 18px;font-size:.95rem}
+.btn[disabled]{background:transparent;color:var(--muted);border-color:var(--line-strong);cursor:not-allowed;transform:none}
+[hidden]{display:none!important}
+.link{font-weight:600;text-decoration:underline;text-underline-offset:6px;min-height:44px;display:inline-flex;align-items:center}
+.pill{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line-strong);background:transparent;font-weight:500;font-size:.95rem;cursor:pointer;white-space:nowrap}
+.pill[aria-pressed="true"]{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}
+.pills{display:flex;gap:8px;flex-wrap:wrap}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:24px;min-height:72px}
+.top nav{display:flex;gap:4px;margin-left:auto}
+.top nav a{font-weight:500;font-size:.95rem;padding:0 14px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px}
+.top nav a:hover{background:var(--stone)}
+.bagbtn{border:1px solid var(--ink);background:transparent;border-radius:999px;min-height:44px;padding:0 16px;display:inline-flex;align-items:center;gap:10px;font-weight:600;cursor:pointer}
+.bagbtn svg{width:18px;height:18px}
+.bagbtn .count{background:var(--btn);color:var(--btn-fg);border-radius:999px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:.75rem;padding:0 6px}
+.bagbtn.bump{animation:bump .45s ease}
+@keyframes bump{40%{transform:scale(1.08)}}
+@media (max-width:760px){
+  html{scroll-padding-top:108px}
+  .top .wrap{flex-wrap:wrap;gap:0 16px;min-height:0;padding-block:6px 0}
+  .bagbtn{margin-left:auto}
+  .top nav{order:3;width:100%;margin:0 -4px;overflow-x:auto;scrollbar-width:none;gap:0}
+  .top nav::-webkit-scrollbar{display:none}
+  .top nav a{padding:0 12px;font-size:.9rem;white-space:nowrap}
+}
+
+/* Hero */
+.hero .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:clamp(32px,5vw,56px);align-items:center}
+.hero{padding-block:clamp(40px,6vw,72px)}
+.hero-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero h1{font-size:clamp(2.6rem,1.6rem + 3.6vw,4.25rem);line-height:1.02;letter-spacing:-.025em}
+.hero h1 em{color:var(--accent);font-style:italic}
+.hero .sub{font-size:1.125rem;color:var(--muted);max-width:30em}
+.facts{list-style:none;margin:6px 0 0;padding:18px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:14px 28px}
+.facts li{display:flex;align-items:center;gap:12px;font-size:.92rem;line-height:1.3;color:var(--muted)}
+.facts b{display:block;color:var(--ink);font-weight:600}
+.facts svg{flex:none;width:40px;height:40px;padding:10px;border-radius:50%;background:var(--tile);color:var(--accent)}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero-media{position:relative;min-width:0}
+.hero-media>img{width:100%;aspect-ratio:1/1.08;object-fit:cover;border-radius:28px;background:var(--tile)}
+@media (max-width:900px){.hero-media>img{aspect-ratio:auto;height:min(520px,58vh)}}
+
+/* Categories */
+.cats{padding-top:0}
+.cats ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px}
+.cats button{border:0;background:none;padding:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;font-weight:600;font-size:.95rem;text-align:center}
+.cats img{width:100%;max-width:160px;aspect-ratio:1;object-fit:cover;border-radius:50%;background:var(--tile);transition:transform .3s ease}
+.cats button:hover img{transform:scale(1.04)}
+
+/* Gift bags */
+.bags-sec{background:var(--stone)}
+.bags{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:28px 22px;margin-top:24px}
+.bagcard{border:0;background:none;padding:0;text-align:left;cursor:pointer;display:flex;flex-direction:column;gap:12px;min-width:0}
+.bagcard .ph{position:relative;border-radius:20px;overflow:hidden;background:var(--tile)}
+.bagcard .cv img{width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .5s ease}
+.bagcard:hover .cv img{transform:scale(1.04)}
+/* Bag cards: the bag's signature item large, and every other item as a row of round photos
+   along the bottom edge (the same circle motif as the open bag). */
+.bagcard .ph{overflow:visible}
+.bagcard .ph>.cv{border-radius:20px;overflow:hidden;background:var(--tile)}
+.chips{position:absolute;left:10px;right:10px;bottom:10px;display:flex}
+.chips img{width:clamp(30px,17%,46px);aspect-ratio:1!important;border-radius:50%;object-fit:cover;border:3px solid var(--bg);background:var(--tile);box-shadow:0 4px 10px rgba(30,33,64,.18);transition:transform .3s ease}
+.chips img+img{margin-left:-8px}
+.bagcard:hover .chips img{transform:translateY(-3px)}
+.bagcard:hover .chips img:nth-child(2n){transform:translateY(-6px)}
+.bagcard .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.bagcard .nm{font-weight:600;font-size:1.05rem;line-height:1.3}
+.bagcard .ct{font-size:.88rem;color:var(--muted);margin-top:-6px}
+.stepper button:disabled{opacity:.35;cursor:not-allowed}
+.bagcard.sold .cv img{opacity:.55;filter:grayscale(.35)}
+.soldout{font-size:.8rem;font-weight:600;color:var(--muted);background:var(--bg);padding:6px 12px;border-radius:999px}
+.inbag{position:absolute;left:12px;top:12px;background:var(--bg);color:var(--ink);font-size:.78rem;font-weight:600;padding:5px 10px;border-radius:999px}
+
+/* Build band */
+.band{background:var(--band);color:var(--band-fg);border-radius:32px;padding:clamp(28px,5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:40px;align-items:center}
+.band .txt{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.band p{color:var(--band-muted);font-size:1.05rem}
+.band .btn{background:var(--band-fg);color:var(--band);border-color:var(--band-fg)}
+.band .pics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.band .pics img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:16px}
+.band .pics img:nth-child(2){transform:translateY(-14px)}
+
+/* Shop */
+.shop-sec{padding-top:0}
+.tools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.search{flex:1;min-width:min(100%,240px);position:relative}
+.search input{width:100%;min-height:48px;border-radius:999px;border:1px solid var(--line-strong);background:var(--bg);padding:0 18px 0 46px}
+.search input:focus{outline:none;border-color:var(--price)}
+.search svg{position:absolute;left:17px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
+select.sort{min-height:48px;border-radius:999px;border:1px solid var(--line-strong);background:var(--bg);padding:0 16px}
+select.sort:focus{outline:none;border-color:var(--price)}
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+.tabs::-webkit-scrollbar{display:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:30px 20px;margin-top:24px}
+.card{display:flex;flex-direction:column;gap:8px;min-width:0}
+.card .ph{position:relative;border-radius:18px;overflow:hidden;background:var(--tile)}
+.card .ph img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.card .nm{font-weight:500;font-size:.95rem;line-height:1.35}
+.card .act{position:absolute;right:10px;bottom:10px}
+.plus{width:44px;height:44px;border-radius:50%;border:0;background:var(--bg);color:var(--ink);display:grid;place-items:center;box-shadow:0 6px 16px rgba(30,33,64,.15);cursor:pointer}
+.plus svg{width:18px;height:18px}
+.stepper{display:inline-flex;align-items:center;background:var(--bg);border-radius:999px;box-shadow:0 6px 16px rgba(30,33,64,.15);height:44px}
+.stepper button{width:44px;height:44px;border:0;background:none;font-size:1.15rem;cursor:pointer;border-radius:50%}
+.stepper b{min-width:20px;text-align:center;font-weight:600}
+.stepper.flat{box-shadow:none;border:1px solid var(--line-strong)}
+.empty{grid-column:1/-1;text-align:center;padding:40px 16px;color:var(--muted)}
+
+/* Order + FAQ */
+.order-sec{border-top:1px solid var(--line)}
+.order{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:48px;align-items:start}
+.order .lead{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.order .lead p{color:var(--muted)}
+.call{display:inline-flex;align-items:center;gap:10px;min-height:44px;font-weight:600;color:var(--ink);text-decoration:none}
+.call svg{flex:none;width:36px;height:36px;padding:9px;border-radius:50%;background:var(--tile);color:var(--accent)}
+.call:hover svg{background:var(--accent);color:var(--bg)}
+.reach{display:flex;flex-wrap:wrap;gap:4px 20px}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{display:flex;gap:24px;padding:22px 0;border-bottom:1px solid var(--line);font-size:1.1rem;font-weight:500}
+.steps li:last-child{border-bottom:0}
+.steps .n{font-family:var(--f-display);color:var(--price);width:32px;flex:none}
+.faq{max-width:760px;display:flex;flex-direction:column}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;min-height:60px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;font-weight:400;color:var(--muted);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding-bottom:20px;color:var(--muted);max-width:60ch}
+footer{background:var(--stone);padding-block:36px}
+@media (max-width:900px){footer{padding-bottom:calc(36px + 76px)}}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}
+footer .wm{font-size:1.25rem}
+
+/* Mobile bag bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:35;background:var(--btn);color:var(--btn-fg);border:0;border-radius:18px;padding:10px 12px 10px 16px;display:none;align-items:center;gap:12px;box-shadow:var(--shadow);text-align:left;cursor:pointer;width:auto}
+.mbar .mt{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px;font-size:.85rem}
+.mbar .bar{height:6px;border-radius:999px;background:color-mix(in srgb,var(--btn-fg) 22%,transparent);overflow:hidden}
+.mbar .bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .4s}
+.mbar .go{font-weight:600;font-size:.9rem;padding:0 6px;white-space:nowrap}
+@media (max-width:900px){.mbar.show{display:flex}}
+
+/* Drawer (bag and gift-bag detail) */
+.scrim{position:fixed;inset:0;background:rgba(15,16,28,.45);z-index:60;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:61;width:min(100%,460px);background:var(--bg);box-shadow:-10px 0 40px rgba(0,0,0,.2);transform:translateX(105%);transition:transform .35s cubic-bezier(.3,1,.4,1);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.open{transform:none}
+.drawer.wide{width:min(100%,600px)}
+.dh{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px 12px 20px;border-bottom:1px solid var(--line)}
+.dh h2{font-size:1.25rem;letter-spacing:-.01em}
+.x{border:0;background:none;width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:1.5rem;line-height:1}
+.x:hover{background:var(--stone)}
+.back{border:0;background:none;min-height:44px;padding:0 6px;display:inline-flex;align-items:center;gap:6px;font-weight:500;cursor:pointer}
+.db{flex:1;overflow:auto;overscroll-behavior:contain;padding:20px;display:flex;flex-direction:column;gap:18px}
+.df{padding:14px 20px 20px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.df .btn{width:100%}
+.df .small{font-size:.8rem;color:var(--muted);text-align:center}
+.line{display:flex;gap:14px;align-items:center}
+.line img{width:52px;height:64px;object-fit:cover;border-radius:10px;flex:none;background:var(--tile)}
+.line .li{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.line .ln{font-size:.95rem;line-height:1.3;overflow-wrap:anywhere}
+.line .lp{font-size:.85rem;color:var(--muted)}
+.group-t{font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.meter{display:flex;flex-direction:column;gap:6px;font-size:.88rem;color:var(--muted)}
+.meter .bar{height:6px;border-radius:999px;background:var(--tile);overflow:hidden}
+.meter .bar i{display:block;height:100%;background:var(--gold);transition:width .4s}
+.meter.done{color:var(--ok)}
+.meter.done .bar i{background:var(--ok)}
+.totals{border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:6px}
+.totals .r{display:flex;justify-content:space-between;font-variant-numeric:tabular-nums}
+.totals .r.t{font:600 1.25rem var(--f-display)}
+.totals .note{font-size:.82rem;color:var(--muted)}
+.totals .muted{color:var(--muted);font-size:.9rem}
+.form .shipto{align-self:end;padding-bottom:14px;font-size:.88rem;font-weight:500;color:var(--ink)}
+.form .shipto:empty{display:none}
+.form .shipto .eta{display:block;font-weight:400;color:var(--muted);margin-top:2px}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form label{display:flex;flex-direction:column;gap:6px;font-size:.82rem;color:var(--muted);min-width:0}
+.form label.full{grid-column:1/-1}
+.form input,.form textarea,.form select{width:100%;border:1px solid var(--line-strong);background:var(--bg);border-radius:12px;padding:10px 12px;color:var(--ink);min-height:46px}
+.form input:focus,.form textarea:focus,.form select:focus{outline:none;border-color:var(--price)}
+.df .err{color:var(--price);font-size:.88rem;text-align:center;font-weight:600}
+.df .err::before{content:"! ";font-weight:700}
+.form [aria-invalid="true"]{border-color:var(--price);box-shadow:0 0 0 1px var(--price);background:color-mix(in srgb,var(--price) 6%,var(--bg))}
+.df .small .link{min-height:32px;font-size:inherit;background:none;border:0;padding:4px 2px;color:inherit;cursor:pointer}
+.placed{display:flex;flex-direction:column;gap:14px;align-items:center;text-align:center}
+.placed img{width:96px}
+.placed h3{font-size:1.4rem}
+.placed .oid{font:600 1rem var(--f-display);letter-spacing:.04em;padding:6px 14px;border:1px dashed var(--line-strong);border-radius:999px}
+.placed .totals,.placed ul{align-self:stretch;text-align:left}
+.placed ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:.9rem;color:var(--muted)}
+.lastorder{font-size:.9rem}
+.emptybag{text-align:center;padding:40px 10px;color:var(--muted);display:flex;flex-direction:column;gap:14px;align-items:center}
+.emptybag img{width:110px}
+.emptybag h3{color:var(--ink);font-size:1.3rem}
+.detail img.cover{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:20px;background:var(--tile)}
+.detail .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.detail h3{font-size:1.6rem;line-height:1.15}
+.detail .price{font-size:1.3rem}
+.detail ul{list-style:none;margin:0;padding:0}
+.detail li{border-bottom:1px solid var(--line);padding:2px 0}
+.detail li img{width:44px;height:52px;object-fit:cover;border-radius:10px;background:var(--tile)}
+.detail .muted{color:var(--muted);font-size:.9rem}
+.detail .worth{color:var(--ok);font-size:.9rem;font-weight:600}
+.addrow{display:flex;gap:12px;align-items:center}
+.addrow .btn{flex:1}
+
+/* Gift-bag reveal: the bag sits in the middle and its items fan out around it in a circle. */
+.orbit{position:relative;width:100%;max-width:520px;margin:0 auto;aspect-ratio:1;container-type:inline-size;border-radius:50%;background:radial-gradient(circle at 50% 50%,var(--stone) 0 45%,transparent 46%)}
+.orbit .ring{position:absolute;inset:12%;border:1px dashed var(--line-strong);border-radius:50%}
+.orbit .core{position:absolute;left:50%;top:50%;width:27%;transform:translate(-50%,-50%);animation:coreIn .5s cubic-bezier(.3,1.4,.5,1) both}
+.orb{position:absolute;left:50%;top:50%;width:25%;aspect-ratio:1;border-radius:50%;padding:0;overflow:hidden;cursor:zoom-in;border:4px solid var(--bg);box-shadow:0 8px 20px rgba(30,33,64,.16);background:var(--tile);
+  transform:translate(-50%,-50%) rotate(var(--a)) translateY(-37cqw) rotate(calc(-1 * var(--a)));animation:orbIn .7s cubic-bezier(.3,1.25,.5,1) var(--d) both;transition:transform .25s ease}
+@keyframes orbIn{from{transform:translate(-50%,-50%) rotate(var(--a)) translateY(0) rotate(calc(-1 * var(--a))) scale(.2);opacity:0}}
+@keyframes coreIn{from{transform:translate(-50%,-50%) scale(.6);opacity:0}}
+.orb img{width:100%;height:100%;object-fit:cover;display:block}
+.orb.hi,.orb:hover{transform:translate(-50%,-50%) rotate(var(--a)) translateY(-37cqw) rotate(calc(-1 * var(--a))) scale(1.15);z-index:2}
+.itembtn{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:14px;width:100%;padding:8px 6px;border-radius:12px;cursor:pointer;min-height:56px}
+.itembtn:focus-visible{outline:3px solid var(--price);outline-offset:2px}
+.itembtn .go{margin-left:auto;color:var(--muted)}
+/* Product view */
+.pview{display:flex;flex-direction:column;gap:14px}
+.pview .big{position:relative;border-radius:22px;overflow:hidden;background:var(--tile)}
+.pview .big{max-width:460px;width:100%;margin:0 auto}
+.pview .big img{width:100%;aspect-ratio:4/5;max-height:70vh;object-fit:contain;animation:zoomIn .45s cubic-bezier(.2,.8,.2,1) both}
+@keyframes zoomIn{from{transform:scale(.92);opacity:.4}}
+.pview .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:0;background:var(--bg);color:var(--ink);box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center}
+.pview .nav.prev{left:12px}.pview .nav.next{right:12px}
+.pview .pos{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);background:var(--bg);font-size:.8rem;font-weight:600;padding:4px 10px;border-radius:999px}
+.pview .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.pview h3{font-size:1.5rem;line-height:1.2}
+.pview .price{font-size:1.3rem}
+.pview .desc{color:var(--muted)}
+.pview .part{font-size:.85rem;color:var(--muted)}
+.orbit.still *{animation:none!important}
+.phbtn{all:unset;display:block;cursor:zoom-in;width:100%}
+.phbtn:focus-visible{outline:3px solid var(--price);outline-offset:-3px}
+.detail li{transition:background .2s}
+.detail li.hi{background:var(--stone)}
+/* Gentle entrances: content is visible at rest, only a short rise plays. */
+.hero-copy>*{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+.hero-copy>*:nth-child(2){animation-delay:.08s}.hero-copy>*:nth-child(3){animation-delay:.16s}.hero-copy>*:nth-child(4){animation-delay:.24s}
+.hero-media>img{animation:rise .9s cubic-bezier(.2,.8,.2,1) .1s both}
+@keyframes rise{from{transform:translateY(18px)}}
+.inview{animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+.bagcard,.card{transition:transform .25s ease}
+/* Photos fade in once decoded instead of popping in; a photo already seen shows at once. */
+img.fade{opacity:0;transition:opacity .35s ease}
+img.fade.ld{opacity:1}
+/* A new page of the shop: cards rise in a quick wave. */
+.card.in{animation:cardIn .45s cubic-bezier(.2,.8,.2,1) calc(var(--i) * 35ms) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}}
+.pager{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;padding-top:12px}
+.pager .pill[aria-current="page"]{background:var(--btn);color:var(--btn-fg);border-color:var(--btn)}
+.pager .pill:disabled{opacity:.35;cursor:not-allowed}
+.pager .pg{min-width:44px;padding:0 12px;font-variant-numeric:tabular-nums}
+@media (max-width:400px){.pager{gap:5px}.pager .pg{min-width:42px;min-height:42px;padding:0 8px}}
+.pager .of{width:100%;text-align:center;font-size:.88rem;color:var(--muted)}
+.bagcard:hover,.card:hover{transform:translateY(-4px)}
+.fly{position:fixed;z-index:80;border-radius:12px;object-fit:cover;pointer-events:none;transition:transform .65s cubic-bezier(.5,-.2,.6,1),opacity .65s}
+.toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:90;background:var(--btn);color:var(--btn-fg);padding:10px 18px;border-radius:999px;font-weight:500;font-size:.95rem;box-shadow:var(--shadow);max-width:calc(100% - 32px);text-align:center}
+@media (min-width:901px){.toast{bottom:28px}}
+html.lock .toast{top:calc(16px + env(safe-area-inset-top,0px));bottom:auto}
+
+/* Phones: two cards per row keeps the bags and shop easy to scan. */
+@media (max-width:560px){
+  .bags,.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}
+  .bagcard .row{flex-direction:column;gap:2px}
+  .bagcard .nm{font-size:.95rem}
+  .bagcard .ct{margin-top:0}
+  .bagcard .ph,.card .ph{border-radius:14px}
+  .cats ul{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter);scrollbar-width:none}
+  .cats ul::-webkit-scrollbar{display:none}
+  .cats li{flex:0 0 112px;scroll-snap-align:start}
+  .cats button{font-size:.88rem;gap:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+<div style="background:#FFC63A;color:#1E2140;text-align:center;font:600 .9rem/1.4 system-ui,sans-serif;padding:8px 16px">Test site · for preview only. Orders placed here are not shipped.</div>
+<a class="skip" href="#top">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="wm" href="#top"><span class="t">TADA</span><span class="s" aria-hidden="true">✦</span><span class="b">BOO</span></a>
+    <nav aria-label="Sections">
+      <a href="#bags">Gift bags</a>
+      <a href="#shop">Shop</a>
+      <a href="#order">How to order</a>
+    </nav>
+    <button class="bagbtn" id="bagBtn" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span>Bag</span><span class="count num" id="bagCount">0</span><span class="sr"> items</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Stationery &amp; gift bags</span>
+        <h1>Little things that make you go <em>tada.</em></h1>
+        <p class="sub">Curated stationery and ready-to-gift bags, packed by hand.</p>
+        <div class="cta">
+          <a class="btn" href="#bags">Shop gift bags</a>
+          <a class="link" href="#build">Build your own</a>
+        </div>
+        <ul class="facts">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg><span><b>Order your way</b>Right here or on WhatsApp</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span><b>Delivered in 7–10 days</b>Anywhere in India, packed by hand</span></li>
+        </ul>
+      </div>
+      <div class="hero-media">
+        <img src="img/7pc-aesthetic.webp" alt="7-piece aesthetic stationery set" width="416" height="520" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <section class="cats" aria-label="Shop by category">
+    <div class="wrap"><ul id="catTiles"></ul></div>
+  </section>
+
+  <section class="bags-sec" id="bags">
+    <div class="wrap">
+      <div class="head"><h2>Gift bags</h2></div>
+      <div class="pills" id="bagFilters" role="group" aria-label="Filter gift bags"></div>
+      <div class="bags" id="bagGrid"></div>
+    </div>
+  </section>
+
+  <section id="build">
+    <div class="wrap">
+      <div class="band">
+        <div class="txt">
+          <h2>Build your own bag</h2>
+          <p>Pick any favourites worth more than ₹299. We pack them for you.</p>
+          <a class="btn" href="#shop">Start picking</a>
+        </div>
+        <div class="pics" aria-hidden="true">
+          <img src="img/labubu-gel-pen.webp" alt="" loading="lazy" width="416" height="520">
+          <img src="img/donut-sticky.webp" alt="" loading="lazy" width="416" height="520">
+          <img src="img/cow-sharpener.webp" alt="" loading="lazy" width="416" height="520">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-sec" id="shop">
+    <div class="wrap">
+      <div class="head"><h2>Shop</h2><span class="meta" id="shopMeta"></span></div>
+      <div class="tools">
+        <label class="search"><span class="sr">Search products</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="search" placeholder="Search pens, diaries, squishies…" autocomplete="off">
+        </label>
+        <label><span class="sr">Sort</span>
+          <select class="sort" id="sort"><option value="cat">Featured</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select>
+        </label>
+      </div>
+      <div class="tabs" id="catTabs" role="group" aria-label="Categories"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="order-sec" id="order">
+    <div class="wrap order">
+      <div class="lead">
+        <h2>How to order</h2>
+        <p>We deliver anywhere in India: ₹49 flat from ₹499, free from ₹999. Delivered in 7–10 days.</p>
+        <a class="btn" href="https://wa.me/919730624700" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <a class="call" href="tel:+919730624700" aria-label="Call us on 97306 24700"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="num">97306&nbsp;24700</span></a>
+      </div>
+      <ol class="steps">
+        <li><span class="n">01</span><span>Add gift bags or favourites to your bag</span></li>
+        <li><span class="n">02</span><span>Place your order here, or send it on WhatsApp</span></li>
+        <li><span class="n">03</span><span>We confirm, pack and deliver in 7–10 days</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>Questions</h2></div>
+      <div class="faq">
+        <details><summary>Is there a minimum for custom bags?</summary><p>Yes. Items you pick for a custom bag must total more than ₹299. You pay only for the items you choose. Ready-made gift bags have no minimum.</p></details>
+        <details><summary>How long does delivery take?</summary><p>7–10 days from your order, anywhere in India. Checkout shows the expected dates as soon as you enter your PIN code.</p></details>
+        <details><summary>Do you deliver?</summary><p>Yes, anywhere in India. Orders with items worth ₹999 or more ship free, and ₹499 to ₹998 pay a flat ₹49 anywhere in India. Smaller orders pay ₹49 within Maharashtra and Goa, ₹69 to the rest of India, and ₹99 to the North East, Jammu &amp; Kashmir, Ladakh, Himachal Pradesh, Sikkim and the islands. Checkout shows your charge as soon as you enter your PIN code.</p></details>
+        <details><summary>Will I get exactly the colour in the photo?</summary><p>Colours, characters or designs may vary with availability. The product type and value always stay the same.</p></details>
+        <details><summary>Can I buy single pencils?</summary><p>Yes. Our Unicorn and Racing Car 2B pencils come in a box of 12 for ₹109, or as single pencils at ₹15 each. Mention it in your order note.</p></details>
+        <details><summary>How do I pay?</summary><p>By UPI, for your order total including delivery.</p></details>
+        <details><summary>Can I order many return gifts for a party?</summary><p>Yes. Add the return-gift bag you like, set the quantity, and send it to us. We'll confirm stock for larger orders.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="wm" href="#top"><span class="t">TADA</span><span class="s" aria-hidden="true">✦</span><span class="b">BOO</span></a>
+    <span class="reach"><a class="call" href="tel:+919730624700" aria-label="Call us on 97306 24700"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="num">97306&nbsp;24700</span></a><a class="call" href="https://wa.me/919730624700" target="_blank" rel="noopener" aria-label="WhatsApp us"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg><span>WhatsApp</span></a></span>
+    <span>Designs may vary with availability</span>
+  </div>
+</footer>
+
+<button class="mbar" id="mbar" type="button">
+  <span class="mt"><span id="mbarText">Your bag</span><span class="bar"><i id="mbarFill"></i></span></span>
+  <span class="go" aria-hidden="true">View bag</span>
+</button>
+
+<div class="scrim" id="scrim"></div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" inert>
+  <div class="dh"><span id="drawerLead"></span><h2 id="drawerTitle">Your bag</h2><button class="x" id="closeDrawer" aria-label="Close">×</button></div>
+  <div class="db" id="drawerBody"></div>
+  <div class="df" id="drawerFoot"></div>
+</div>
+
+<div class="toast" id="toast" aria-hidden="true" hidden></div>
+<p class="sr" id="live" role="status" aria-live="polite"></p>
+
+<!-- Bump ?v= when catalog.js gains fields the page needs, so no buyer runs a new page on a cached old catalogue. -->
+<script src="catalog.js?v=5"></script>
+<script>
+(() => {
+  const T = window.TADABOO;
+  const P = Object.fromEntries(T.products.map((p) => [p.id, p]));
+  const B = Object.fromEntries(T.bags.map((b) => [b.id, b]));
+  const $ = (s, el = document) => el.querySelector(s);
+  const inr = (n) => "₹" + Math.round(n).toLocaleString("en-IN");
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const img = (id) => `img/${id}.webp`;
+  // Small 240px copies for chips, circles and lists (scripts/make_thumbs.py).
+  const thumb = (id) => `img/sm/${id}.webp`;
+  // Lazy photo that fades in on load. Re-renders rebuild the markup, so photos already
+  // loaded once skip the fade (no flicker when the bag changes).
+  const seen = new Set();
+  const pic = (src, extra = "") => `<img src="${src}" alt="" loading="lazy" decoding="async" width="416" height="520" class="fade${seen.has(src) ? " ld" : ""}"${extra}>`;
+  document.addEventListener("load", (e) => { const t = e.target; if (t.tagName === "IMG" && t.classList.contains("fade")) { seen.add(t.getAttribute("src")); t.classList.add("ld"); } }, true);
+  document.addEventListener("error", (e) => { const t = e.target; if (t.tagName !== "IMG") return; const s = t.getAttribute("src") || ""; if (s.startsWith("img/sm/")) t.src = s.replace("img/sm/", "img/"); else t.classList.add("ld"); }, true);
+  const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const worth = (b) => b.items.reduce((t, id) => t + (P[id]?.price || 0), 0);
+  const cover = (b) => img(b.cover || b.items[0]);
+
+  // ---------- Cart ----------
+  const KEY = "tadaboo-bag-v1";
+  const own = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
+  const isObj = (v) => !!v && typeof v === "object" && !Array.isArray(v);
+  const load = (k) => { try { const v = JSON.parse(localStorage.getItem(k)); return isObj(v) ? v : {}; } catch { return {}; } };
+  const cart = load(KEY); // "p:id" | "b:id" -> qty
+  for (const k of Object.keys(cart)) {
+    const [t, id] = k.split(":"), n = Math.floor(Number(cart[k]));
+    if (!(t === "p" ? own(P, id) : t === "b" && own(B, id)) || !Number.isSafeInteger(n) || n < 1) delete cart[k]; else cart[k] = n;
+  }
+  const form = load(KEY + "-form");
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(cart)); localStorage.setItem(KEY + "-form", JSON.stringify(form)); } catch {} };
+  const qty = (k) => cart[k] || 0;
+  // Stock from the Stockroom (stock.json, exported from its Orders tab). Until it loads, or if it
+  // is missing, nothing is capped; the Stockroom checks stock again when the order is confirmed.
+  let STOCK = null;
+  // Stockroom units each cart line uses, by Stockroom item id (a gift bag uses its items' units).
+  const unitsOf = (k, n) => {
+    const id = k.slice(2), out = {};
+    for (const pid of k[0] === "b" ? B[id].items : [id]) out[P[pid].sid] = (out[P[pid].sid] || 0) + (P[pid].units || 1) * n;
+    return out;
+  };
+  // How many of k the bag can hold, counting stock already taken by the bag's other lines
+  // (a Back to School · Plus and a loose 12-piece pencil set draw on the same sets).
+  const avail = (k) => {
+    if (!STOCK) return Infinity;
+    const used = {};
+    for (const [o, n] of Object.entries(cart)) if (o !== k) for (const [sid, u] of Object.entries(unitsOf(o, n))) used[sid] = (used[sid] || 0) + u;
+    let a = k[0] === "b" && Number.isFinite(STOCK.bags?.["cat-" + k.slice(2)]) ? STOCK.bags["cat-" + k.slice(2)] : Infinity;
+    for (const [sid, per] of Object.entries(unitsOf(k, 1))) {
+      const u = STOCK.items?.[sid];
+      if (Number.isFinite(u)) a = Math.min(a, Math.floor(Math.max(0, u - (used[sid] || 0)) / per));
+    }
+    return a;
+  };
+  const setQty = (k, n) => {
+    const a = avail(k);
+    if (n > a) { n = a; toast(a > 0 ? `Only ${a} available right now` : "Sold out right now"); }
+    if (n > 0) cart[k] = n; else delete cart[k];
+    newOrderIfSent(); save(); keep(renderAll);
+  };
+  // A bag saved on an earlier visit may now be more than is in stock.
+  const clampCart = () => { for (const k of Object.keys(cart)) { const a = avail(k); if (cart[k] > a) { if (a > 0) cart[k] = a; else delete cart[k]; } } };
+  // Every order gets an ID; once it has been sent, the next change to the bag starts a new one.
+  const ORDER_KEY = KEY + "-order";
+  let curId = null, sent = false;
+  const orderId = () => {
+    if (!curId) { try { curId = localStorage.getItem(ORDER_KEY); } catch {} }
+    if (!/^TB-\d{6}-[A-Z0-9]{4}$/.test(curId || "")) {
+      const d = new Date(), p2 = (x) => String(x).padStart(2, "0");
+      const r = Array.from(crypto.getRandomValues(new Uint8Array(4)), (b) => "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"[b % 32]).join("");
+      curId = `TB-${String(d.getFullYear()).slice(2)}${p2(d.getMonth() + 1)}${p2(d.getDate())}-${r}`;
+      try { localStorage.setItem(ORDER_KEY, curId); } catch {}
+    }
+    return curId;
+  };
+  function newOrderIfSent() { if (!sent) return; sent = false; curId = null; try { localStorage.removeItem(ORDER_KEY); } catch {} }
+  // Machine-readable line the Stockroom's Orders tab reads: kind:stockroomId:qty:unitsPerQty:unitPrice.
+  const orderCode = () => "TB1|" + orderId() + "|" + Object.entries(cart).map(([k, n]) => {
+    const id = k.slice(2);
+    return k[0] === "b" ? `b:cat-${id}:${n}:1:${B[id].price}` : `i:${P[id].sid}:${n}:${P[id].units || 1}:${P[id].price}`;
+  }).join(",");
+  const nameOf = (k) => (k[0] === "p" ? P : B)[k.slice(2)].name;
+
+  // Re-rendering replaces buttons, so put keyboard focus back on the matching control
+  // (Add -> its stepper, stepper at 0 -> its Add button, filter -> same filter).
+  const FOCUS = ["data-inc", "data-dec", "data-add", "data-addbag", "data-bf", "data-cat", "data-openbag", "data-page"];
+  function keep(fn) {
+    const a = document.activeElement, attr = a && FOCUS.find((n) => a.hasAttribute?.(n));
+    const box = attr && a.closest("[id]");
+    fn();
+    if (!box || document.contains(a)) return;
+    const v = a.getAttribute(attr), id = v.replace(/^[pb]:/, ""), k = attr === "data-add" ? "p:" + v : attr === "data-addbag" ? "b:" + v : v;
+    const el = [`[${attr}="${v}"]`, `[data-inc="${k}"]`, `[data-dec="${k}"]`, `[data-add="${id}"]`, `[data-addbag="${id}"]`, `[data-openbag="${id}"]`].map((sel) => box.querySelector(sel)).find(Boolean);
+    (el || (box.closest("#drawer") && $("#closeDrawer")))?.focus({ preventScroll: true });
+  }
+  // ---------- Delivery ----------
+  // Every order ships. The charge comes from the PIN code: its first digits give the region
+  // (India Post's own layout), and catalog.js `delivery` says which regions cost what.
+  const D = T.delivery || { home: [], remote: [], rates: { home: 69, india: 69, remote: 99 }, flatAbove: Infinity, flat: 69, freeAbove: Infinity };
+  const REGIONS = [["11", "Delhi"], ["12-13", "Haryana"], ["14-16", "Punjab / Chandigarh"], ["17", "Himachal Pradesh"], ["18-19", "Jammu & Kashmir / Ladakh"],
+    ["20-28", "Uttar Pradesh / Uttarakhand"], ["30-34", "Rajasthan"], ["36-39", "Gujarat"], ["40-44", "Maharashtra"], ["45-48", "Madhya Pradesh"],
+    ["49", "Chhattisgarh"], ["50", "Telangana"], ["51-53", "Andhra Pradesh"], ["56-59", "Karnataka"], ["60-64", "Tamil Nadu"], ["67-69", "Kerala"],
+    ["70-74", "West Bengal"], ["75-77", "Odisha"], ["78", "Assam"], ["79", "North East"], ["80-85", "Bihar / Jharkhand"]];
+  const SPOTS = { "68255": "Lakshadweep", "403": "Goa", "605": "Puducherry", "737": "Sikkim", "744": "Andaman & Nicobar" };
+  const regionOf = (pin) => {
+    const spot = Object.keys(SPOTS).find((k) => pin.startsWith(k)); if (spot) return SPOTS[spot];
+    const n = +pin.slice(0, 2), r = REGIONS.find(([span]) => { const [a, b = a] = span.split("-").map(Number); return n >= a && n <= b; });
+    return r ? r[1] : "";
+  };
+  // { region, fee } for a valid Indian PIN code, else null.
+  const quote = (pin, items) => {
+    pin = String(pin || "").trim();
+    const region = /^[1-8]\d{5}$/.test(pin) && regionOf(pin); if (!region) return null;
+    const has = (list) => list.some((x) => pin.startsWith(x));
+    const zone = has(D.remote) ? "remote" : has(D.home) ? "home" : "india";
+    return { region, zone, fee: items >= D.freeAbove ? 0 : items >= D.flatAbove ? D.flat : D.rates[zone] };
+  };
+  // Arrival window by zone (catalog.js `arrivalDays`). Like other shops' PIN-code widgets, it is
+  // an estimate from fixed rules, not live courier data.
+  // Couriers don't deliver on Sundays, so a date that lands on one moves to Monday.
+  const addDays = (from, n) => { const d = new Date(from); d.setDate(d.getDate() + n + (new Date(d.getFullYear(), d.getMonth(), d.getDate() + n).getDay() === 0 ? 1 : 0)); return d; };
+  const day = (d) => d.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" });
+  const eta = (q, from = new Date()) => {
+    const w = q && D.arrivalDays && D.arrivalDays[q.zone]; if (!w) return "";
+    return `${day(addDays(from, w[0]))} – ${day(addDays(from, w[1]))}`;
+  };
+  const fee = (q) => (q ? (q.fee ? inr(q.fee) : "Free") : "");
+  const totals = () => {
+    let custom = 0, bags = 0, count = 0;
+    for (const [k, n] of Object.entries(cart)) {
+      const [t, id] = k.split(":");
+      if (t === "p") custom += P[id].price * n; else bags += B[id].price * n;
+      count += n;
+    }
+    return { custom, bags, total: custom + bags, count, customOk: custom === 0 || custom > T.customMin };
+  };
+
+  // ---------- Messages ----------
+  let tt, lt;
+  const announce = (msg) => { const el = $("#live"); el.textContent = ""; clearTimeout(lt); lt = setTimeout(() => (el.textContent = msg), 60); };
+  const toast = (msg) => { const el = $("#toast"); el.textContent = msg; el.hidden = false; clearTimeout(tt); tt = setTimeout(() => (el.hidden = true), 2200); announce(msg); };
+
+  // ---------- Fly to bag ----------
+  function flyToBag(fromEl, src) {
+    const btn = $("#bagBtn");
+    const bump = () => { btn.classList.remove("bump"); void btn.offsetWidth; btn.classList.add("bump"); };
+    if (reduced || !fromEl) return bump();
+    const a = fromEl.getBoundingClientRect(), b = btn.getBoundingClientRect();
+    const f = document.createElement("img");
+    f.src = src; f.className = "fly"; f.alt = "";
+    const w = Math.min(a.width, 110), h = w * 1.25;
+    Object.assign(f.style, { left: a.left + a.width / 2 - w / 2 + "px", top: a.top + a.height / 2 - h / 2 + "px", width: w + "px", height: h + "px" });
+    document.body.appendChild(f);
+    requestAnimationFrame(() => {
+      const dx = b.left + b.width / 2 - (a.left + a.width / 2), dy = b.top + b.height / 2 - (a.top + a.height / 2);
+      f.style.transform = `translate(${dx}px,${dy}px) scale(.15)`;
+      f.style.opacity = ".3";
+    });
+    setTimeout(() => { f.remove(); bump(); }, 680);
+  }
+  const stepper = (k, n, cls = "") => `<div class="stepper ${cls}"><button data-dec="${k}" aria-label="One less ${esc(nameOf(k))}">−</button><b class="num">${n}</b><button data-inc="${k}" aria-label="One more ${esc(nameOf(k))}"${n >= avail(k) ? " disabled" : ""}>+</button></div>`;
+  const plusIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>`;
+
+  // ---------- Categories ----------
+  const catCover = { pens: "labubu-gel-pen", paper: "snoopy-diary", sharp: "cow-sharpener", make: "3d-sticker", gift: "dumpling-squishy" };
+  const catShort = { pens: "Pens", paper: "Notebooks", sharp: "Erasers", make: "Craft kits", gift: "Gift sets" };
+  $("#catTiles").innerHTML = T.categories.map((c) => `<li><button data-gocat="${c.id}" aria-label="${esc(c.name)}">${pic(thumb(catCover[c.id] || T.products.find((p) => p.cat === c.id).id))}${esc(catShort[c.id] || c.name)}</button></li>`).join("");
+  $("#catTiles").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-gocat]"); if (!b) return;
+    cat = b.dataset.gocat; query = ""; $("#q").value = ""; try { localStorage.setItem(KEY + "-cat", cat); } catch {}
+    page = 0; renderTabs(); renderGrid();
+    $("#shop").scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
+    $(`[data-cat="${cat}"]`)?.focus({ preventScroll: true });
+  });
+
+  // ---------- Gift bags ----------
+  const bagFilters = [["all", "All"], ["school", "School"], ["girls", "For girls"], ["boys", "For boys"], ["return", "Return gifts"], ["birthday", "Hampers"]];
+  let bagF = "all";
+  const bagMatch = (b) => bagF === "all" || b.occasion === bagF || b.for === bagF || (bagF === "school" && b.occasion === "create");
+  const chips = (b) => b.items.filter((id) => id !== (b.cover || b.items[0])).map((id) => pic(thumb(id))).join("");
+  const stockTag = (k) => { const a = avail(k); return a <= 0 ? (k[0] === "b" ? `<span class="inbag">Sold out</span>` : "") : a <= 3 ? `<span class="inbag">Only ${a} left</span>` : ""; };
+  const askLink = (name) => `<a class="btn line" target="_blank" rel="noopener" href="https://wa.me/${T.whatsapp}?text=${encodeURIComponent(`Hi TadaBoo! Is ${name} back in stock?`)}">Sold out · ask us on WhatsApp</a>`;
+  function bagCard(b) {
+    const n = qty("b:" + b.id);
+    return `<button class="bagcard${!n && avail("b:" + b.id) <= 0 ? " sold" : ""}" data-openbag="${b.id}" aria-haspopup="dialog">
+      <span class="ph"><span class="cv">${pic(cover(b))}</span><span class="chips" aria-hidden="true">${chips(b)}</span>${n ? `<span class="inbag">In bag · ${n}${avail("b:" + b.id) <= n ? " · all we have" : ""}</span>` : stockTag("b:" + b.id)}</span>
+      <span class="row"><span class="nm">${esc(b.name)}</span><span class="price">${inr(b.price)}</span></span>
+      <span class="ct">${b.items.length} items</span>
+    </button>`;
+  }
+  function renderBags() {
+    $("#bagFilters").innerHTML = bagFilters.map(([id, l]) => `<button class="pill" aria-pressed="${id === bagF}" data-bf="${id}">${l}</button>`).join("");
+    $("#bagGrid").innerHTML = T.bags.filter(bagMatch).map(bagCard).join("");
+  }
+  $("#bagFilters").addEventListener("click", (e) => { const c = e.target.closest("[data-bf]"); if (c) { bagF = c.dataset.bf; keep(renderBags); announce(`${$("#bagGrid").children.length} gift bags`); } });
+  $("#bagGrid").addEventListener("click", (e) => { const c = e.target.closest("[data-openbag]"); if (c) openDrawer({ bag: c.dataset.openbag }); });
+
+  // ---------- Shop ----------
+  let cat = "all", query = "", sort = "cat", page = 0;
+  const PER = 12;
+  try { const c = localStorage.getItem(KEY + "-cat"); if (T.categories.some((x) => x.id === c)) cat = c; } catch {}
+  function renderTabs() {
+    const tabs = [{ id: "all", name: "All" }, ...T.categories];
+    // While searching, results come from the whole shop, so "All" shows as selected.
+    const on = query.trim() ? "all" : cat;
+    $("#catTabs").innerHTML = tabs.map((c) => `<button class="pill" aria-pressed="${c.id === on}" data-cat="${c.id}">${esc(c.name)}</button>`).join("");
+  }
+  function productCard(p) {
+    const n = qty("p:" + p.id);
+    return `<article class="card">
+      <div class="ph"><button class="phbtn" data-prod="${p.id}" aria-haspopup="dialog" aria-label="View ${esc(p.name)}">${pic(img(p.id))}</button>
+        ${stockTag("p:" + p.id)}<div class="act">${n ? stepper("p:" + p.id, n) : avail("p:" + p.id) <= 0 ? `<span class="soldout">Sold out</span>` : `<button class="plus" data-add="${p.id}" aria-label="Add ${esc(p.name)} to bag">${plusIcon}</button>`}</div></div>
+      <span class="nm">${esc(p.name)}</span><span class="price">${inr(p.price)}</span>
+    </article>`;
+  }
+  let wave = false;
+  function goPage(n) {
+    page = n; wave = !reduced; renderGrid();
+    const g = $("#grid");
+    // Land on the cards themselves (not the Shop heading), so a phone shows the new page.
+    g.scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
+    g.querySelector(".card button")?.focus({ preventScroll: true });
+    announce(`Page ${page + 1}. ${$(".pager .of")?.textContent || ""}`);
+  }
+  function renderGrid() {
+    const q = query.trim().toLowerCase();
+    // Search looks across the whole shop; the category tabs only browse.
+    let list = T.products.filter((p) => q ? (p.name + " " + p.desc + " " + p.tags.join(" ")).toLowerCase().includes(q) : (cat === "all" || p.cat === cat));
+    if (sort === "lo") list = [...list].sort((a, b) => a.price - b.price);
+    if (sort === "hi") list = [...list].sort((a, b) => b.price - a.price);
+    // The shop shows a dozen at a time, page by page, so it never reads as one long wall of photos.
+    const pages = Math.max(1, Math.ceil(list.length / PER));
+    page = Math.min(page, pages - 1);
+    const shown = list.slice(page * PER, page * PER + PER);
+    const nums = Array.from({ length: pages }, (_, n) => `<button class="pill pg" data-page="${n}" aria-label="Page ${n + 1}"${n === page ? ' aria-current="page"' : ""}>${n + 1}</button>`).join("");
+    const pager = pages > 1 ? `<nav class="pager" aria-label="Shop pages"><button class="pill pg" data-page="${page - 1}" aria-label="Previous page"${page ? "" : " disabled"}>‹</button>${nums}<button class="pill pg" data-page="${page + 1}" aria-label="Next page"${page < pages - 1 ? "" : " disabled"}>›</button><span class="of">${page * PER + 1}–${page * PER + shown.length} of ${list.length}</span></nav>` : "";
+    $("#grid").innerHTML = list.length ? shown.map((p, i) => productCard(p).replace('<article class="card">', `<article class="card${wave ? " in" : ""}" style="--i:${i}">`)).join("") + pager : `<div class="empty"><p>Nothing matches “${esc(query)}”. Try “pen”, “diary” or “squishy”.</p></div>`;
+    $("#shopMeta").textContent = q ? `${list.length} results` : `${list.length} items`;
+    wave = false;
+    return list.length;
+  }
+  $("#catTabs").addEventListener("click", (e) => { const c = e.target.closest("[data-cat]"); if (!c) return; cat = c.dataset.cat; page = 0; try { localStorage.setItem(KEY + "-cat", cat); } catch {} keep(() => { renderTabs(); renderGrid(); }); });
+  let st;
+  $("#q").addEventListener("input", (e) => { query = e.target.value; page = 0; renderTabs(); const n = renderGrid(); clearTimeout(st); st = setTimeout(() => announce(n ? `${n} products` : "No products match"), 500); });
+  $("#sort").addEventListener("change", (e) => { sort = e.target.value; page = 0; renderGrid(); });
+  addEventListener("keydown", (e) => { if (e.key === "/" && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName) && !drawer.classList.contains("open")) { e.preventDefault(); $("#q").focus(); } });
+  $("#grid").addEventListener("click", (e) => {
+    const a = e.target.closest("[data-add]");
+    if (a) { const id = a.dataset.add; flyToBag(a.closest(".card").querySelector("img"), img(id)); setQty("p:" + id, 1); announce(`Added ${P[id].name}`); }
+    const pv = e.target.closest("[data-prod]"); if (pv) { openDrawer({ product: pv.dataset.prod }); announce(`${P[pv.dataset.prod].name}, ${inr(P[pv.dataset.prod].price)}`); }
+    const pg = e.target.closest("[data-page]"); if (pg && !pg.disabled) goPage(+pg.dataset.page);
+  });
+
+  // Steppers anywhere on the page
+  document.addEventListener("click", (e) => {
+    const inc = e.target.closest("[data-inc]"), dec = e.target.closest("[data-dec]");
+    const k = (inc || dec)?.dataset[inc ? "inc" : "dec"]; if (!k) return;
+    setQty(k, qty(k) + (inc ? 1 : -1));
+    announce(qty(k) ? `${nameOf(k)}: ${qty(k)} in your bag` : `${nameOf(k)} removed from your bag`);
+  });
+
+  // ---------- Custom bag meter ----------
+  const meterInfo = () => {
+    const t = totals(), done = t.custom > T.customMin;
+    return { t, done, pct: Math.min(100, (t.custom / (T.customMin + 1)) * 100),
+      msg: done ? "Custom bag ready to pack" : `Add ${inr(T.customMin + 1 - t.custom)} more. Custom bags must total over ₹${T.customMin}.` };
+  };
+  function renderMbar() {
+    const { t, done, pct, msg } = meterInfo();
+    const mb = $("#mbar");
+    mb.classList.toggle("show", t.count > 0);
+    $("#mbarText").textContent = t.custom > 0 && !done ? `Custom bag ${inr(t.custom)} · add ${inr(T.customMin + 1 - t.custom)} more` : `${t.count} in your bag · ${inr(t.total)}`;
+    mb.setAttribute("aria-label", `${$("#mbarText").textContent}. View bag`);
+    $("#mbarFill").style.width = (t.custom > 0 ? pct : 100) + "%";
+  }
+
+  // ---------- Drawer: bag and gift-bag detail ----------
+  const drawer = $("#drawer"), scrim = $("#scrim");
+  let lastFocus = null, lastSel = null, view = {};
+  const behind = () => [$(".skip"), $(".top"), $("main"), $("footer"), $("#mbar")];
+  function openDrawer(v = {}) {
+    if (!drawer.classList.contains("open")) {
+      lastFocus = document.activeElement;
+      // Lists re-render while the drawer is open, so also remember how to find the opener again.
+      const a = ["data-prod", "data-openbag", "data-add"].find((n) => lastFocus?.hasAttribute?.(n));
+      lastSel = a ? `[${a}="${lastFocus.getAttribute(a)}"]` : null;
+    }
+    view = v; renderDrawer(); drawer.inert = false; behind().forEach((el) => (el.inert = true));
+    document.documentElement.classList.add("lock"); drawer.classList.add("open"); scrim.classList.add("open");
+    $("#drawerBody").scrollTop = 0;
+    setTimeout(() => $("#closeDrawer").focus(), 50);
+  }
+  function closeDrawer() { drawer.classList.remove("open"); scrim.classList.remove("open"); drawer.inert = true; behind().forEach((el) => (el.inert = false)); document.documentElement.classList.remove("lock");
+    const sel = lastSel && `main ${lastSel}`, id = lastSel?.match(/"(.+)"/)?.[1];
+    (document.contains(lastFocus) ? lastFocus : (sel && $(sel)) || (id && ($(`main [data-inc="p:${id}"]`) || $(`main [data-openbag="${id}"]`))) || $("#bagBtn")).focus?.(); }
+  $("#bagBtn").addEventListener("click", () => openDrawer());
+  $("#mbar").addEventListener("click", () => openDrawer());
+  $("#closeDrawer").addEventListener("click", closeDrawer);
+  scrim.addEventListener("click", closeDrawer);
+  addEventListener("keydown", (e) => {
+    if (!drawer.classList.contains("open")) return;
+    if (e.key === "Escape") return closeDrawer();
+    // Keep Tab inside the open panel.
+    if (e.key === "Tab") {
+      const f = [...drawer.querySelectorAll("button:not([disabled]),a[href],input,select,textarea")].filter((el) => el.offsetParent && el.tabIndex >= 0);
+      if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+    // Arrow keys flip through a bag's items in the product view.
+    if ((e.key === "ArrowLeft" || e.key === "ArrowRight") && view.product && view.from && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) {
+      e.preventDefault(); drawer.querySelector(`[data-step="${e.key === "ArrowLeft" ? -1 : 1}"]`)?.click();
+    }
+  });
+
+  let detailQty = 1;
+  function renderDetail(b) {
+    const w = worth(b);
+    $("#drawerTitle").textContent = "Gift bag";
+    $("#drawerLead").innerHTML = `<button class="back" data-view="cart"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>Your bag (${totals().count})</button>`;
+    $("#drawerBody").innerHTML = `<div class="detail" style="display:flex;flex-direction:column;gap:16px">
+      <div class="orbit${view.still ? " still" : ""}" aria-hidden="true"><span class="ring"></span><img class="core" src="img/tadaboo-bag.webp" alt="" width="359" height="400">${b.items.map((id, i) => `<button class="orb" tabindex="-1" data-i="${i}" data-prod="${id}" style="--a:${(360 / b.items.length) * i}deg;--d:${120 + i * 70}ms"><img src="${thumb(id)}" alt="" decoding="async" width="240" height="300"></button>`).join("")}</div>
+      <div class="row"><h3>${esc(b.name)}</h3><span class="price">${inr(b.price)}</span></div>
+      ${w > b.price ? `<span class="worth">Worth ${inr(w)} bought separately</span>` : ""}
+      <span class="group-t">Inside · ${b.items.length} items</span>
+      <ul>${b.items.map((id, i) => `<li data-i="${i}"><button class="itembtn" data-prod="${id}">${pic(thumb(id))}<span>${esc(P[id].name)}</span><span class="go" aria-hidden="true">›</span></button></li>`).join("")}</ul>
+      <span class="part">Tap any item to see it up close.</span>
+      <p class="muted">${b.note ? esc(b.note) + " " : ""}Packed in our white TadaBoo bag with a thank-you card.</p>
+    </div>`;
+    renderDetailFoot(b);
+  }
+  function renderDetailFoot(b) {
+    const k = "b:" + b.id;
+    $("#drawerFoot").innerHTML = `<div class="addrow">
+      ${avail(k) - qty(k) <= 0 ? "" : `<div class="stepper flat"><button data-dq="-1" aria-label="One less ${esc(b.name)}">−</button><b class="num" id="dq">${detailQty}</b><button data-dq="1" aria-label="One more ${esc(b.name)}"${detailQty >= avail(k) - qty(k) ? " disabled" : ""}>+</button></div>`}
+      ${avail(k) - qty(k) > 0 ? `<button class="btn" data-addbag="${b.id}">Add to bag · ${inr(b.price * detailQty)}</button>` : (avail(k) > 0 ? `<button class="btn" disabled>All we have is in your bag</button>` : askLink(b.name))}</div>
+      ${qty(k) ? `<span class="small">${qty(k)} already in your bag</span>` : ""}`;
+  }
+  function orderText() {
+    const t = totals();
+    const L = [`Hi TadaBoo! I'd like to order (${orderId()}):`, ""];
+    const bl = Object.entries(cart).filter(([k]) => k.startsWith("b:"));
+    const pl = Object.entries(cart).filter(([k]) => k.startsWith("p:"));
+    if (bl.length) { L.push("Gift bags:"); for (const [k, n] of bl) L.push(`• ${B[k.slice(2)].name} × ${n} = ${inr(B[k.slice(2)].price * n)}`); L.push(""); }
+    if (pl.length) { L.push("Custom bag items:"); for (const [k, n] of pl) L.push(`• ${P[k.slice(2)].name} × ${n} = ${inr(P[k.slice(2)].price * n)}`); L.push(""); }
+    const q = quote(form.pin, t.total);
+    L.push(`Items: ${inr(t.total)}`, `Delivery: Door-to-door${q ? ` to ${q.region} · ${fee(q)}${eta(q) ? ` · est. ${eta(q)}` : ""}` : ", charge by PIN code"}`, `Total: ${inr(t.total + (q ? q.fee : 0))}`, "");
+    if (form.name) L.push(`Name: ${form.name}`);
+    if (form.phone) L.push(`Phone: ${form.phone}`);
+    const addr = String(form.address || "").trim(), pin = String(form.pin || "").trim();
+    if (addr) L.push(`Address: ${addr}${pin ? " – " + pin : ""}`); else if (pin) L.push(`PIN: ${pin}`);
+    if (form.note) L.push(`Gift note: ${form.note}`);
+    L.push("", `Order code (please don't edit): ${orderCode()}`);
+    return L.join("\n");
+  }
+  function renderCart() {
+    const t = totals();
+    $("#drawerTitle").textContent = "Your bag";
+    $("#drawerLead").innerHTML = "";
+    const body = $("#drawerBody"), foot = $("#drawerFoot");
+    if (!t.count) {
+      body.innerHTML = `<div class="emptybag"><img src="img/tadaboo-bag.webp" alt="" width="359" height="400"><h3>Your bag is empty</h3><p>Pick a gift bag or add your favourites.</p><a class="btn sm" href="#bags" data-close>Browse gift bags</a>${lastPlaced() ? `<button class="link lastorder" data-view="placed">Your last order · ${esc(lastPlaced().id)}</button>` : ""}</div>`;
+      foot.innerHTML = ""; return;
+    }
+    const line = (k, n, src, name, price) => `<div class="line"><img src="${src}" alt=""><div class="li"><span class="ln">${esc(name)}</span><span class="lp">${inr(price)} each</span></div>${stepper(k, n, "flat")}</div>`;
+    const bl = Object.entries(cart).filter(([k]) => k.startsWith("b:"));
+    const pl = Object.entries(cart).filter(([k]) => k.startsWith("p:"));
+    const m = meterInfo();
+    body.innerHTML = `
+      ${bl.length ? `<span class="group-t">Gift bags</span>${bl.map(([k, n]) => { const b = B[k.slice(2)]; return line(k, n, thumb(b.cover || b.items[0]), b.name, b.price); }).join("")}` : ""}
+      ${pl.length ? `<span class="group-t">Custom bag</span>${pl.map(([k, n]) => { const p = P[k.slice(2)]; return line(k, n, thumb(p.id), p.name, p.price); }).join("")}
+        <div class="meter${m.done ? " done" : ""}"><span class="bar"><i style="width:${m.pct}%"></i></span><span>${m.msg}</span></div>` : ""}
+      <div class="totals" id="totals">${totalsHtml()}</div>
+      <form class="form" id="oform" autocomplete="on">
+        <label>Your name<input id="f-name" name="name" value="${esc(form.name || "")}" autocomplete="name"></label>
+        <label>Phone<input id="f-phone" name="phone" type="tel" value="${esc(form.phone || "")}" autocomplete="tel"></label>
+        <label class="full">Delivery address<textarea id="f-address" name="address" rows="2" autocomplete="street-address" placeholder="House, street, area, city">${esc(form.address || "")}</textarea></label>
+        <label>PIN code<input id="f-pin" name="pin" inputmode="numeric" maxlength="6" autocomplete="postal-code" value="${esc(form.pin || "")}" aria-describedby="shipTo"></label>
+        <span class="shipto" id="shipTo" aria-live="polite">${shipTo()}</span>
+        <label class="full">Gift note or request (optional)<input id="f-note" name="note" value="${esc(form.note || "")}" placeholder="Happy birthday, Aanya!"></label>
+      </form>`;
+    foot.innerHTML = t.customOk ? `
+      <p class="err" id="ferr" role="alert" hidden></p>
+      <button class="btn" id="placeOrder" type="button">${placeLabel()}</button>
+      <a class="btn line sm" id="sendWa" target="_blank" rel="noopener" href="#">Order on WhatsApp instead</a>
+      <span class="small">Prefer to chat? Same order, sent on WhatsApp. Delivered in ${T.deliveryDays}.</span>`
+      : `<button class="btn" disabled>Place order</button><span class="small">${m.msg}</span>`;
+    updateWa();
+    if (t.customOk) sapi().catch(() => {});
+  }
+  function totalsHtml() {
+    const t = totals(), q = quote(form.pin, t.total), left = D.freeAbove - t.total, toFlat = D.flatAbove - t.total;
+    return `<div class="r"><span>Items</span><span>${inr(t.total)}</span></div>
+      <div class="r"><span>Delivery</span><span>${q ? fee(q) : `<span class="muted">${String(form.pin || "").trim().length === 6 ? "Check PIN code" : "Enter PIN code"}</span>`}</span></div>
+      <div class="r t"><span>Total</span><span>${inr(t.total + (q ? q.fee : 0))}</span></div>
+      <span class="note">${!Number.isFinite(left) ? "" : left <= 0 ? "Your order ships free anywhere in India."
+        : toFlat > 0 ? `Add ${inr(toFlat)} more for ${inr(D.flat)} delivery anywhere in India, or reach ${inr(D.freeAbove)} for free delivery.`
+        : `Add ${inr(left)} more for free delivery anywhere in India.`}</span>`;
+  }
+  function shipTo() {
+    const pin = String(form.pin || "").trim(), q = quote(pin, totals().total);
+    const when = eta(q);
+    return q ? `Delivering to ${esc(q.region)} · ${fee(q)}${when ? `<span class="eta">Arrives ${when}</span>` : ""}` : pin.length === 6 ? "Please check this PIN code." : "";
+  }
+  const placeLabel = () => { const t = totals(), q = quote(form.pin, t.total); return `Place order · ${inr(t.total + (q ? q.fee : 0))}`; };
+  const back = (label) => `<button class="back" data-view="bag" aria-label="Back to ${esc(label)}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>Back</button>`;
+  function renderProduct(p) {
+    const fb = view.from && B[view.from], list = fb ? fb.items : null, i = list ? list.indexOf(p.id) : -1;
+    $("#drawerTitle").textContent = "Product";
+    $("#drawerLead").innerHTML = fb ? back(fb.name) : "";
+    const arrow = (dir, d) => `<button class="nav ${dir}" data-step="${d}" aria-label="${d < 0 ? "Previous" : "Next"} item in ${esc(fb.name)}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="${d < 0 ? "M15 6l-6 6 6 6" : "M9 6l6 6-6 6"}"/></svg></button>`;
+    $("#drawerBody").innerHTML = `<div class="pview">
+      <div class="big"><img src="${img(p.id)}" alt="${esc(p.name)}" width="416" height="520">${list && list.length > 1 ? arrow("prev", -1) + arrow("next", 1) + `<span class="pos">${i + 1} / ${list.length}</span>` : ""}</div>
+      <div class="row"><h3>${esc(p.name)}</h3><span class="price">${inr(p.price)}</span></div>
+      <p class="desc">${esc(p.desc)}</p>
+      ${fb ? `<span class="part">Part of <button class="link" data-view="bag" style="min-height:auto">${esc(fb.name)} · ${inr(fb.price)}</button></span>` : ""}
+    </div>`;
+    renderProductFoot(p);
+  }
+  function renderProductFoot(p) {
+    const k = "p:" + p.id, n = qty(k), m = meterInfo();
+    $("#drawerFoot").innerHTML = `<div class="addrow">${n ? stepper(k, n, "flat") + `<span class="small" style="flex:1">${n} in your custom bag</span>` : avail(k) <= 0 ? askLink(p.name) : `<button class="btn" data-padd="${p.id}">${view.from ? "Add just this item" : "Add to bag"} · ${inr(p.price)}</button>`}</div>
+      <span class="small">${m.t.custom > 0 ? m.msg : `Single items make a custom bag (over ₹${T.customMin}).`}</span>`;
+  }
+  // soft: refresh only what changed, so the bag's circle and product zoom don't replay.
+  function renderDrawer(soft) {
+    const p = view.product && P[view.product], b = view.bag && B[view.bag];
+    drawer.classList.toggle("wide", !!(p || b));
+    if (p) soft ? renderProductFoot(p) : renderProduct(p);
+    else if (b) soft ? renderDetailFoot(b) : renderDetail(b);
+    else if (view.placed && lastPlaced()) renderPlaced(lastPlaced());
+    else renderCart();
+  }
+  // ---------- Website checkout ----------
+  // Orders go to the WebsitePublisher order inbox (catalog.js `orders`); WhatsApp stays as the other way.
+  // The script loads only when someone is about to order; if it can't load or the send fails,
+  // the bag is kept and the buyer is pointed to WhatsApp.
+  let sapiP = null;
+  const sapi = () => sapiP || (sapiP = new Promise((res, rej) => {
+    const ready = () => (window.WP && WP.sapi ? res(WP.sapi(T.orders.project)) : rej(new Error("no client")));
+    if (window.WP && WP.sapi) return ready();
+    const sc = document.createElement("script");
+    sc.src = "https://cdn.websitepublisher.ai/js/sapi-client.js"; sc.async = true;
+    sc.onload = ready; sc.onerror = () => rej(new Error("load failed"));
+    document.head.append(sc);
+  }).catch((err) => { sapiP = null; throw err; }));
+  const PLACED_KEY = KEY + "-placed";
+  const lastPlaced = () => { const o = load(PLACED_KEY); return typeof o.id === "string" && Number.isFinite(o.total) ? o : null; };
+  const mobile = (v) => String(v || "").replace(/\D/g, "").replace(/^(?:91|0)(?=\d{10}$)/, "");
+  let placing = false;
+  async function placeOrder(btn) {
+    if (placing) return;
+    const err = $("#ferr"), need = [];
+    drawer.querySelectorAll("#oform [aria-invalid]").forEach((el) => { el.removeAttribute("aria-invalid"); if (el.id === "f-pin") el.setAttribute("aria-describedby", "shipTo"); else el.removeAttribute("aria-describedby"); });
+    if (!String(form.name || "").trim()) need.push(["f-name", "your name"]);
+    if (!/^[6-9]\d{9}$/.test(mobile(form.phone))) need.push(["f-phone", "a 10-digit mobile number"]);
+    if (!String(form.address || "").trim()) need.push(["f-address", "your address"]);
+    if (!quote(form.pin, 0)) need.push(["f-pin", "a valid 6-digit PIN code"]);
+    if (need.length) {
+      need.forEach(([id]) => { $("#" + id).setAttribute("aria-invalid", "true"); $("#" + id).setAttribute("aria-describedby", id === "f-pin" ? "ferr shipTo" : "ferr"); });
+      err.textContent = "Please add " + need.map((x) => x[1]).join(", ").replace(/, ([^,]*)$/, " and $1") + ".";
+      err.hidden = false; $("#" + need[0][0]).focus(); return;
+    }
+    const t = totals(), id = orderId(), q = quote(form.pin, t.total), total = t.total + q.fee;
+    const items = Object.entries(cart).map(([k, n]) => `${nameOf(k)} × ${n} = ${inr((k[0] === "b" ? B : P)[k.slice(2)].price * n)}`);
+    const fields = {
+      order_id: id, name: String(form.name).trim(), phone: mobile(form.phone),
+      delivery: `Door-to-door delivery to ${q.region} · ${fee(q)} (items ${inr(t.total)})`,
+      address: String(form.address).trim(), pincode: String(form.pin).trim(),
+      note: String(form.note || "").trim(), items: items.join("\n"), total: String(total),
+      order_code: orderCode(), website: "", // honeypot: must stay empty
+    };
+    placing = true; btn.disabled = true; btn.textContent = "Placing your order…"; err.hidden = true;
+    let ok = false;
+    try {
+      const client = await sapi();
+      const r = await Promise.race([client.submitForm(T.orders.form, fields), new Promise((_, rej) => setTimeout(() => rej(new Error("timeout")), 20000))]);
+      ok = !!(r && r.ok);
+    } catch {}
+    placing = false;
+    if (!ok) {
+      btn.disabled = false; btn.textContent = "Try placing it again"; btn.classList.add("line"); $("#sendWa").classList.remove("line");
+      err.textContent = "We couldn't place your order online just now. Your bag is saved: please send it on WhatsApp instead.";
+      err.hidden = false; $("#sendWa").focus(); return;
+    }
+    try { localStorage.setItem(PLACED_KEY, JSON.stringify({ id, total, items, sub: t.total, ship: q.fee, region: q.region, eta: eta(q), name: fields.name, phone: fields.phone, at: Date.now() })); } catch {}
+    for (const k of Object.keys(cart)) delete cart[k];
+    sent = true; newOrderIfSent(); save();
+    view = { placed: true }; renderAll(); renderDrawer(); $("#drawerBody").scrollTop = 0;
+    $("#drawerTitle").setAttribute("tabindex", "-1"); $("#drawerTitle").focus();
+    announce(`Order ${id} placed`);
+  }
+  function renderPlaced(o) {
+    $("#drawerTitle").textContent = "Order placed";
+    $("#drawerLead").innerHTML = "";
+    const first = String(o.name || "").split(/\s+/)[0];
+    $("#drawerBody").innerHTML = `<div class="placed">
+      <img src="img/tadaboo-bag.webp" alt="" width="359" height="400">
+      <h3>Thank you${first ? ", " + esc(first) : ""}!</h3>
+      <span class="oid num">${esc(o.id)}</span>
+      <p>We have your order. We'll call or WhatsApp you on <span class="num">${esc(o.phone || "")}</span> to confirm it.</p>
+      <ul>${(o.items || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
+      <div class="totals">${Number.isFinite(o.ship) ? `<div class="r"><span>Items</span><span>${inr(o.sub)}</span></div>
+        <div class="r"><span>Delivery to ${esc(o.region || "you")}</span><span>${o.ship ? inr(o.ship) : "Free"}</span></div>` : ""}
+        <div class="r t"><span>Order total</span><span>${inr(o.total)}</span></div>
+        <span class="note">${o.eta ? `Estimated arrival ${esc(o.eta)}.` : `Delivered in ${esc(T.deliveryDays)}.`}</span></div>
+    </div>`;
+    const upi = /^[\w.\-]{2,}@[a-zA-Z]{2,}$/.test(T.upi || "") ? T.upi : "";
+    const q = (o2) => Object.entries(o2).map(([k, v]) => k + "=" + encodeURIComponent(v).replace(/%40/g, "@")).join("&");
+    const wa = `https://wa.me/${T.whatsapp}?text=${encodeURIComponent(`Hi TadaBoo! I placed order ${o.id} on the website.`)}`;
+    const what = `Pay ${inr(o.total)}`;
+    const link = `upi://pay?${q({ pa: upi, pn: T.upiName || "TadaBoo", am: o.total.toFixed(2), cu: "INR", tn: "TadaBoo " + o.id })}`;
+    // upi:// links open a UPI app on phones; on a computer, copying the UPI ID is what works.
+    const desk = matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const note = `<span class="small">Pay to <b>${esc(upi)}</b> with note <span class="num">${esc(o.id)}</span>.</span>`;
+    $("#drawerFoot").innerHTML = !upi
+      ? `<span class="small">We'll share payment details when we confirm your order.</span>
+      <a class="btn line" target="_blank" rel="noopener" href="${wa}">Questions? WhatsApp us</a>`
+      : desk
+      ? `<button class="btn" data-copyupi type="button">Copy UPI ID to pay ${inr(o.total)}</button>${note}
+      <a class="btn line sm" href="${link}">Open a UPI app</a>`
+      : `<a class="btn" href="${link}">${what} with UPI</a>${note}
+      <a class="btn line sm" target="_blank" rel="noopener" href="${wa}">Questions? WhatsApp us</a>`;
+  }
+  function updateWa() {
+    // A lone surrogate (half an emoji, e.g. from a cut-off paste) makes encodeURIComponent throw.
+    const enc = (x) => { try { return encodeURIComponent(x); } catch { return encodeURIComponent(x.toWellFormed ? x.toWellFormed() : x.replace(/[\uD800-\uDFFF]/g, "\uFFFD")); } };
+    const a = $("#sendWa"); if (a) a.href = `https://wa.me/${T.whatsapp}?text=${enc(orderText())}`;
+  }
+  drawer.addEventListener("input", (e) => {
+    const f = e.target.closest("#oform [name]"); if (!f) return;
+    form[f.name] = f.value; save(); f.removeAttribute("aria-invalid");
+    if (f.name === "pin") f.setAttribute("aria-describedby", "shipTo"); else f.removeAttribute("aria-describedby");
+    if (f.name === "pin") {
+      $("#totals").innerHTML = totalsHtml(); $("#shipTo").innerHTML = shipTo();
+      const b = $("#placeOrder"); if (b && !placing) b.textContent = placeLabel();
+    }
+    updateWa();
+  });
+  drawer.addEventListener("submit", (e) => e.preventDefault());
+  drawer.addEventListener("click", (e) => {
+    if (e.target.closest("[data-close]")) closeDrawer();
+    if (e.target.closest("#copyOrder")) { sent = true; copy(orderText(), "Order copied. Paste it in WhatsApp to " + T.phone); }
+    if (e.target.closest("#sendWa")) sent = true;
+    if (e.target.closest("#placeOrder")) placeOrder(e.target.closest("#placeOrder"));
+    if (e.target.closest("[data-copyupi]")) copy(T.upi, "UPI ID copied");
+    const v = e.target.closest("[data-view]");
+    if (v) {
+      const left = view.product;
+      view = v.dataset.view === "placed" ? { placed: true } : v.dataset.view === "bag" && view.from ? { bag: view.from, still: true } : {}; renderDrawer(); $("#drawerBody").scrollTop = 0;
+      if (view.placed) { $("#drawerTitle").setAttribute("tabindex", "-1"); $("#drawerTitle").focus(); }
+      else (left && drawer.querySelector(`.itembtn[data-prod="${left}"]`) || $("#closeDrawer")).focus();
+    }
+    const pr = e.target.closest("[data-prod]");
+    if (pr) { view = { product: pr.dataset.prod, from: view.bag || view.from }; renderDrawer(); $("#drawerBody").scrollTop = 0; drawer.querySelector(".back")?.focus(); announce(P[view.product].name); }
+    const stp = e.target.closest("[data-step]");
+    if (stp) { const list = B[view.from].items, i = (list.indexOf(view.product) + Number(stp.dataset.step) + list.length) % list.length; view.product = list[i]; renderDrawer(); drawer.querySelector(`[data-step="${stp.dataset.step}"]`)?.focus(); announce(`${P[view.product].name}, ${i + 1} of ${list.length}`); }
+    const pa = e.target.closest("[data-padd]");
+    if (pa) { const id = pa.dataset.padd; flyToBag($(".pview .big img"), img(id)); setQty("p:" + id, 1); renderProductFoot(P[id]); drawer.querySelector(`[data-inc="p:${id}"]`)?.focus(); announce(`Added ${P[id].name}`); }
+    const dq = e.target.closest("[data-dq]");
+    if (dq) { detailQty = Math.max(1, Math.min(99, avail("b:" + view.bag) - qty("b:" + view.bag), detailQty + Number(dq.dataset.dq))); renderDetailFoot(B[view.bag]); drawer.querySelector(`[data-dq="${dq.dataset.dq}"]`).focus(); announce(`Quantity ${detailQty}`); }
+    const add = e.target.closest("[data-addbag]");
+    if (add) {
+      const id = add.dataset.addbag;
+      flyToBag($(".detail .orbit .core"), cover(B[id]));
+      cart["b:" + id] = Math.min(avail("b:" + id), qty("b:" + id) + detailQty); newOrderIfSent(); save();
+      toast(`${detailQty} × ${B[id].name} added`);
+      detailQty = 1; view = {}; renderAll(); renderDrawer(); $("#drawerBody").scrollTop = 0; $("#closeDrawer").focus();
+    }
+  });
+  // Pointing at an item in the list highlights it in the circle, and the other way round.
+  const hi = (i) => drawer.querySelectorAll("[data-i]").forEach((el) => el.classList.toggle("hi", el.dataset.i === i));
+  drawer.addEventListener("pointerover", (e) => { const el = e.target.closest(".detail [data-i]"); hi(el ? el.dataset.i : null); });
+  // Opening a bag's detail starts its quantity at 1.
+  $("#bagGrid").addEventListener("click", () => { detailQty = 1; }, true);
+  async function copy(text, ok) {
+    try { await navigator.clipboard.writeText(text); toast(ok); }
+    catch { toast("Couldn't copy here. Select the text and copy it."); }
+  }
+
+  // ---------- Render ----------
+  function renderAll() {
+    const t = totals();
+    $("#bagCount").textContent = t.count;
+    renderBags(); renderGrid(); renderMbar();
+    if (drawer.classList.contains("open")) {
+      const y = $("#drawerBody").scrollTop; renderDrawer(true); $("#drawerBody").scrollTop = y;
+    }
+  }
+  renderTabs(); renderAll();
+  fetch("stock.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).then((d) => {
+    if (!isObj(d) || !isObj(d.items) || !isObj(d.bags)) return;
+    STOCK = d; clampCart(); save(); keep(renderAll);
+  }).catch(() => {});
+
+  // Sections rise gently as they scroll in (they are already visible; only the lift plays).
+  if (!reduced && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("inview"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll(".head,.cats li,.band,.steps li,.faq").forEach((el) => io.observe(el));
+  }
+})();
+</script>
+</body>
+</html>
