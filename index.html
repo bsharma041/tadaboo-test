@@ -193,15 +193,16 @@ section{padding-block:clamp(64px,8vw,96px)}
 .search svg{position:absolute;left:17px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
 select.sort{min-height:48px;border-radius:999px;border:1px solid var(--line-strong);background:var(--bg);padding:0 16px}
 select.sort:focus{outline:none;border-color:var(--price)}
-.catsel{display:none}
+.pill .short{display:none}
 @media (max-width:560px){
-  .tools{display:grid;grid-template-columns:1.5fr 1fr;gap:10px}
-  .tools .search{grid-column:1/-1}
-  .catsel,.sortl{display:block;min-width:0}
-  .catsel select,.sortl select{width:100%;font-size:.95rem;padding:0 12px}
-  #catTabs{display:none}
+  .tools{flex-wrap:nowrap;gap:8px}
+  .tools .search{min-width:0}
+  .sortl select{width:auto;max-width:132px;font-size:.9rem;padding:0 10px}
+  #catTabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;overflow:visible;padding-bottom:0}
+  #catTabs .pill{padding:0 6px;min-height:42px;font-size:.9rem;justify-content:center;display:flex;align-items:center}
+  #catTabs .pill .full{display:none}
+  #catTabs .pill .short{display:inline}
   .shop-sec .head{margin-bottom:14px}
-  .tools{margin-bottom:0}
   .grid{margin-top:16px}
 }
 .tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
@@ -700,10 +701,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
       <div class="tools">
         <label class="search"><span class="sr">Search products</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="q" type="search" placeholder="Search pens, diaries, squishies…" autocomplete="off">
-        </label>
-        <label class="catsel"><span class="sr">Category</span>
-          <select class="sort" id="catSel"></select>
+          <input id="q" type="search" placeholder="Search pens, diaries…" autocomplete="off">
         </label>
         <label class="sortl"><span class="sr">Sort</span>
           <select class="sort" id="sort"><option value="cat">Featured</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select>
@@ -1012,9 +1010,8 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
     const tabs = [{ id: "all", name: "All" }, ...T.categories];
     // While searching, results come from the whole shop, so "All" shows as selected.
     const on = query.trim() ? "all" : cat;
-    $("#catTabs").innerHTML = tabs.map((c) => `<button class="pill" aria-pressed="${c.id === on}" data-cat="${c.id}">${esc(c.name)}</button>`).join("");
-    // Phones get the same choice as a dropdown: every category in one tap, nothing to swipe.
-    $("#catSel").innerHTML = tabs.map((c) => `<option value="${c.id}"${c.id === on ? " selected" : ""}>${c.id === "all" ? "All categories" : esc(c.name)}</option>`).join("");
+    // Phones show the short names in a grid, so every category is visible at once (no swiping).
+    $("#catTabs").innerHTML = tabs.map((c) => `<button class="pill" aria-pressed="${c.id === on}" data-cat="${c.id}" aria-label="${esc(c.name)}"><span class="full">${esc(c.name)}</span><span class="short" aria-hidden="true">${esc(catShort[c.id] || c.name)}</span></button>`).join("");
   }
   function productCard(p) {
     const n = qty("p:" + p.id);
@@ -1050,7 +1047,6 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
     wave = false;
     return list.length;
   }
-  $("#catSel").addEventListener("change", (e) => { cat = e.target.value; query = ""; $("#q").value = ""; page = 0; try { localStorage.setItem(KEY + "-cat", cat); } catch {} renderTabs(); renderGrid(); announce(`${$("#shopMeta").textContent} in ${e.target.selectedOptions[0].textContent}`); });
   $("#catTabs").addEventListener("click", (e) => { const c = e.target.closest("[data-cat]"); if (!c) return; cat = c.dataset.cat; page = 0; try { localStorage.setItem(KEY + "-cat", cat); } catch {} keep(() => { renderTabs(); renderGrid(); }); });
   let st;
   $("#q").addEventListener("input", (e) => { query = e.target.value; page = 0; renderTabs(); const n = renderGrid(); clearTimeout(st); st = setTimeout(() => announce(n ? `${n} products` : "No products match"), 500); });
