@@ -112,6 +112,8 @@ section{padding-block:clamp(64px,8vw,96px)}
 .top nav{display:flex;gap:4px;margin-left:auto}
 .top nav a{font-weight:500;font-size:.95rem;padding:0 14px;min-height:44px;display:inline-flex;align-items:center;border-radius:999px}
 .top nav a:hover{background:var(--stone)}
+.top nav .navbtn{border:0;background:none;font:500 .95rem var(--f-body);color:var(--ink);padding:0 14px;min-height:44px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.top nav .navbtn:hover{background:var(--butter)}
 .bagbtn{border:1px solid var(--ink);background:transparent;border-radius:999px;min-height:44px;padding:0 16px;display:inline-flex;align-items:center;gap:10px;font-weight:600;cursor:pointer}
 .bagbtn svg{width:18px;height:18px}
 .bagbtn .count{background:var(--btn);color:var(--btn-fg);border-radius:999px;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:.75rem;padding:0 6px}
@@ -191,6 +193,17 @@ section{padding-block:clamp(64px,8vw,96px)}
 .search svg{position:absolute;left:17px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
 select.sort{min-height:48px;border-radius:999px;border:1px solid var(--line-strong);background:var(--bg);padding:0 16px}
 select.sort:focus{outline:none;border-color:var(--price)}
+.catsel{display:none}
+@media (max-width:560px){
+  .tools{display:grid;grid-template-columns:1.5fr 1fr;gap:10px}
+  .tools .search{grid-column:1/-1}
+  .catsel,.sortl{display:block;min-width:0}
+  .catsel select,.sortl select{width:100%;font-size:.95rem;padding:0 12px}
+  #catTabs{display:none}
+  .shop-sec .head{margin-bottom:14px}
+  .tools{margin-bottom:0}
+  .grid{margin-top:16px}
+}
 .tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
 .tabs::-webkit-scrollbar{display:none}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:30px 20px;margin-top:24px}
@@ -254,6 +267,10 @@ footer .wm{font-size:1.25rem}
 .db{flex:1;overflow:auto;overscroll-behavior:contain;padding:20px;display:flex;flex-direction:column;gap:18px}
 .df{padding:14px 20px 20px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
 .df .btn{width:100%}
+.df .walink{align-self:center;font-weight:600;font-size:.92rem;text-decoration:underline;text-underline-offset:4px;min-height:36px;display:inline-flex;align-items:center;color:var(--ink)}
+.fine{font-size:.82rem;color:var(--muted);margin:0}
+.fine a{color:var(--ink);font-weight:600}
+@media (max-width:560px){.df{padding:10px 16px 12px;gap:6px}.progress{font-size:.72rem;gap:4px}.progress li{padding:6px 2px}}
 .df .small{font-size:.8rem;color:var(--muted);text-align:center}
 .line{display:flex;gap:14px;align-items:center}
 .line img{width:52px;height:64px;object-fit:cover;border-radius:10px;flex:none;background:var(--tile)}
@@ -604,6 +621,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
       <a href="#bags">Gift bags</a>
       <a href="#shop">Shop</a>
       <a href="#order">How to order</a>
+      <button type="button" class="navbtn" id="navOrders" data-myordersbtn hidden>My orders</button>
     </nav>
     <button class="bagbtn" id="bagBtn" aria-haspopup="dialog">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
@@ -684,7 +702,10 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
           <input id="q" type="search" placeholder="Search pens, diaries, squishies…" autocomplete="off">
         </label>
-        <label><span class="sr">Sort</span>
+        <label class="catsel"><span class="sr">Category</span>
+          <select class="sort" id="catSel"></select>
+        </label>
+        <label class="sortl"><span class="sr">Sort</span>
           <select class="sort" id="sort"><option value="cat">Featured</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option></select>
         </label>
       </div>
@@ -992,6 +1013,8 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
     // While searching, results come from the whole shop, so "All" shows as selected.
     const on = query.trim() ? "all" : cat;
     $("#catTabs").innerHTML = tabs.map((c) => `<button class="pill" aria-pressed="${c.id === on}" data-cat="${c.id}">${esc(c.name)}</button>`).join("");
+    // Phones get the same choice as a dropdown: every category in one tap, nothing to swipe.
+    $("#catSel").innerHTML = tabs.map((c) => `<option value="${c.id}"${c.id === on ? " selected" : ""}>${c.id === "all" ? "All categories" : esc(c.name)}</option>`).join("");
   }
   function productCard(p) {
     const n = qty("p:" + p.id);
@@ -1027,6 +1050,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
     wave = false;
     return list.length;
   }
+  $("#catSel").addEventListener("change", (e) => { cat = e.target.value; query = ""; $("#q").value = ""; page = 0; try { localStorage.setItem(KEY + "-cat", cat); } catch {} renderTabs(); renderGrid(); announce(`${$("#shopMeta").textContent} in ${e.target.selectedOptions[0].textContent}`); });
   $("#catTabs").addEventListener("click", (e) => { const c = e.target.closest("[data-cat]"); if (!c) return; cat = c.dataset.cat; page = 0; try { localStorage.setItem(KEY + "-cat", cat); } catch {} keep(() => { renderTabs(); renderGrid(); }); });
   let st;
   $("#q").addEventListener("input", (e) => { query = e.target.value; page = 0; renderTabs(); const n = renderGrid(); clearTimeout(st); st = setTimeout(() => announce(n ? `${n} products` : "No products match"), 500); });
@@ -1070,7 +1094,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
   // Drawer header: Back on the left, "Your bag" on the right. The title stays for screen readers.
   const backBtn = `<button class="back" data-back><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>Back</button>`;
   // Checkout steps: 0 bag, 1 delivery details, 2 pay.
-  const progress = (step) => `<ol class="progress" aria-label="Checkout steps">${["Bag", "Delivery", UPI_ID || UPI_QR ? "Pay by UPI" : "Pay (we'll confirm)"].map((l, i) => `<li class="${i < step ? "done" : i === step ? "on" : ""}"${i === step ? ' aria-current="step"' : ""}>${i < step ? "✓" : i + 1} · ${l}</li>`).join("")}</ol>`;
+  const progress = (step) => `<ol class="progress" aria-label="Checkout steps">${["Bag", "Delivery", UPI_ID || UPI_QR ? "Pay by UPI" : "Pay"].map((l, i) => `<li class="${i < step ? "done" : i === step ? "on" : ""}"${i === step ? ' aria-current="step"' : ""}>${i < step ? "✓" : i + 1} · ${l}</li>`).join("")}</ol>`;
   function header(title, { back = false, toBag = false } = {}) {
     const h = $("#drawerTitle"); h.textContent = title; h.classList.toggle("sr", back || toBag);
     $("#drawerLead").innerHTML = back ? backBtn : "";
@@ -1201,13 +1225,12 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
         <span class="shipto" id="shipTo" aria-live="polite">${shipTo()}</span>
         <label class="full">Gift note or request (optional)<input id="f-note" name="note" value="${esc(form.note || "")}" placeholder="Happy birthday, Aanya!"></label>
         <label class="full optin"><input type="checkbox" id="f-offers" name="offers"${form.offers === true ? " checked" : ""}><span>Send me TadaBoo offers and new arrivals on WhatsApp. <span class="muted">Optional. Reply STOP any time.</span></span></label>
-      </form>`;
+      </form>
+      <p class="fine">Delivered in ${T.deliveryDays}. Prefer to chat? The WhatsApp link below sends this same order. We use your details only for this order${form.offers === true ? " and the offers you asked for" : ""}. <a href="policies.html" target="_blank" rel="noopener">Privacy &amp; returns</a></p>`;
     foot.innerHTML = t.customOk ? `
       <p class="err" id="ferr" role="alert" hidden></p>
       <button class="btn" id="placeOrder" type="button">${placeLabel()}</button>
-      <a class="btn line sm" id="sendWa" target="_blank" rel="noopener" href="#">Order on WhatsApp instead</a>
-      <span class="small">Prefer to chat? Same order, sent on WhatsApp. Delivered in ${T.deliveryDays}.</span>
-      <span class="small">We use your details only for this order${form.offers === true ? " and the offers you asked for" : ""}. <a class="link" href="policies.html" target="_blank" rel="noopener" style="min-height:32px">Privacy &amp; returns</a></span>`
+      <a class="walink" id="sendWa" target="_blank" rel="noopener" href="#">or send this order on WhatsApp</a>`
       : `<button class="btn" disabled>Place order</button><span class="small">${m.msg}${bl.length ? " Or remove the loose items to order your gift bags now." : ""}</span>
       <a class="btn line sm wa-ask" href="https://wa.me/${T.whatsapp}" target="_blank" rel="noopener" data-chat>Ask us on WhatsApp</a>`;
     updateWa();
@@ -1325,7 +1348,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
     } catch {}
     placing = false;
     if (!ok) {
-      btn.disabled = false; btn.textContent = "Try placing it again"; btn.classList.add("line"); $("#sendWa").classList.remove("line");
+      btn.disabled = false; btn.textContent = "Try placing it again"; btn.classList.add("line"); $("#sendWa").className = "btn"; $("#sendWa").textContent = "Send this order on WhatsApp";
       err.textContent = "We couldn't place your order online just now. Your bag is saved: please send it on WhatsApp instead.";
       err.hidden = false; $("#sendWa").focus(); return;
     }
@@ -1552,14 +1575,12 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
     return `<button class="mini p${(i % 4) + 1}" ${b ? `data-openbag="${id}"` : `data-prod="${id}"`} aria-haspopup="dialog"><span class="ph2">${pic(src)}</span><span>${esc(nameOf(k))}</span>${priceTag(b || P[id])}</button>`;
   };
   function renderMine() {
-    const t = totals(), lp = myOrders[0], recent = seenList.slice(0, 3);
+    const t = totals(), lp = null, recent = seenList.slice(0, 3);
     const sec = $("#mine");
     // Only buyers who came back see this shelf (never a first-time visitor mid-visit), and it sits above the hero.
     if (!returning || (!t.count && !lp && !favs.length && !recent.length)) { sec.hidden = true; return; }
     const nud = [];
     if (t.count) { const k = Object.keys(cart)[0], id = k.slice(2), b = k[0] === "b" && B[id]; nud.push(`<div class="nudge p3"><img src="${thumb(b ? b.cover || b.items[0] : id)}" alt=""><span class="t"><b>Your bag is waiting</b>${t.count} item${t.count > 1 ? "s" : ""} · ${inr(t.total)}${!t.customOk ? ` · add ${inr(T.customMin + 1 - t.custom)} to finish your custom bag` : t.total < D.freeAbove && Number.isFinite(D.freeAbove) ? ` · ${inr(D.freeAbove - t.total)} to free delivery` : ""}</span><button class="btn" data-openbagbtn>View bag</button></div>`); }
-    const lo = myOrders[0];
-    if (lo) nud.push(`<div class="nudge p2"><img src="img/tadaboo-bag.webp" alt=""><span class="t"><b>Your last order</b><span class="num">${esc(lo.id)}</span> · ${inr(lo.total)}${myOrders.length > 1 ? ` · ${myOrders.length} orders in all` : ""}</span>${isObj(lo.cart) && Object.keys(lo.cart).some(valid) ? `<button class="btn line" data-reorder>Order again</button>` : ""}<button class="btn line" data-myorders>My orders</button></div>`);
     sec.hidden = false;
     $("#mineBox").innerHTML = `<div class="head" style="margin:0"><div><span class="kick">Welcome back</span><h2 id="mineTitle" tabindex="-1">Pick up where you left off</h2></div></div>
       ${nud.length ? `<div class="nudges">${nud.join("")}</div>` : ""}
@@ -1674,6 +1695,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
     $("#bagCount").textContent = t.count;
     $("#wafab").setAttribute("aria-label", t.count ? `Chat with us on WhatsApp. Send your bag of ${t.count} items` : "Chat with us on WhatsApp");
     renderBags(); renderGrid(); renderMbar(); renderMine(); renderBest();
+    $("#navOrders").hidden = !myOrders.length; $("#navOrders").textContent = myOrders.length ? `My orders (${myOrders.length})` : "My orders";
     $("#fromPrice b").textContent = "from " + inr(Math.min(...T.bags.map((b) => b.price)));
     if (drawer.classList.contains("open")) {
       const y = $("#drawerBody").scrollTop; renderDrawer(true); $("#drawerBody").scrollTop = y;
