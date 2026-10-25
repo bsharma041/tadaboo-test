@@ -439,11 +439,45 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
 .fav.flat{position:static;box-shadow:none;border:1px solid var(--line-strong);width:50px;height:50px;flex:none}
 /* Welcome-back shelf for returning buyers. */
 .mine{padding-block:0 clamp(40px,6vw,64px)}
+.revsec{padding-top:0}
+.revs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,270px),1fr));gap:16px}
+.rev{margin:0;background:var(--pc);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.rev .who{display:flex;align-items:center;gap:12px}
+.rev .who img,.rev .who .ini{width:56px;height:56px;border-radius:50%;object-fit:cover;flex:none;border:3px solid var(--card);background:var(--card)}
+.rev .who .ini{display:grid;place-items:center;font:700 1.3rem var(--f-mark);color:var(--accent)}
+.rev .who b{display:block;line-height:1.25}
+.rev .who span{font-size:.85rem;color:var(--muted)}
+.rev .stars{color:#B37A00;letter-spacing:2px;font-size:.95rem}
+.rev blockquote{margin:0;font-size:1rem;line-height:1.5}
+.rev blockquote::before{content:"“"}.rev blockquote::after{content:"”"}
+.rev .got{font-size:.85rem;color:var(--muted)}
+.rev .got button{all:unset;cursor:pointer;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+.rev .got button:focus-visible{outline:3px solid var(--price);outline-offset:2px;border-radius:4px}
+@media (max-width:560px){.revs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter);scrollbar-width:none}.revs::-webkit-scrollbar{display:none}.rev{flex:0 0 84%;scroll-snap-align:start}}
 .ocard{background:var(--pc);border-radius:18px;padding:14px;display:flex;flex-direction:column;gap:8px}
 .ocard .row{display:flex;justify-content:space-between;gap:10px}
 .ocard ul{list-style:none;margin:0;padding:0;font-size:.88rem;color:var(--muted);display:flex;flex-direction:column;gap:2px}
 .ocard .addrow .btn{flex:0 1 auto}
-.offerbar{background:var(--orange);color:#23264A;text-align:center;font-size:.9rem;padding:8px 16px;line-height:1.35}
+/* Offer banner: big, bright and gently animated so nobody misses a sale. */
+.offerbar{position:relative;overflow:hidden;color:#23264A;padding:14px var(--gutter);display:flex;align-items:center;justify-content:center;gap:clamp(10px,2.5vw,24px);flex-wrap:wrap;
+  background:linear-gradient(110deg,#FF6B2C 0%,#FF8FA3 30%,#FFC63A 55%,#FF6B2C 80%,#FF8FA3 100%);background-size:300% 100%;animation:obFlow 9s linear infinite;box-shadow:inset 0 -3px 0 rgba(35,38,74,.12)}
+@keyframes obFlow{to{background-position:-300% 0}}
+.offerbar::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 35%,rgba(255,255,255,.45) 50%,transparent 65%);transform:translateX(-100%);animation:obShine 3.6s ease-in-out 1s infinite;pointer-events:none}
+@keyframes obShine{60%,100%{transform:translateX(100%)}}
+.ob-pct{display:grid;place-items:center;width:clamp(64px,9vw,84px);height:clamp(64px,9vw,84px);border-radius:50%;background:#23264A;color:#FFC63A;font:700 clamp(1.35rem,2.6vw,1.8rem)/.9 var(--f-mark);text-align:center;flex:none;box-shadow:0 6px 18px rgba(35,38,74,.3);animation:obPop 2.4s ease-in-out infinite}
+.ob-pct small{display:block;font-size:.45em;letter-spacing:.12em;color:#fff;margin-top:3px}
+@keyframes obPop{0%,100%{transform:scale(1) rotate(-4deg)}50%{transform:scale(1.08) rotate(4deg)}}
+.ob-txt{display:flex;flex-direction:column;gap:2px;min-width:0;text-align:left}
+.ob-name{font:700 clamp(1.35rem,1rem + 1.6vw,2.1rem)/1.05 var(--f-display);letter-spacing:-.01em}
+.ob-sub{font-size:clamp(.95rem,.85rem + .4vw,1.1rem);font-weight:600}
+.ob-time{display:inline-block;background:rgba(255,255,255,.75);border-radius:999px;padding:2px 10px;margin-left:4px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.ob-cta{position:relative;z-index:1;background:#23264A;color:#fff;border-radius:999px;min-height:48px;padding:0 22px;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:1rem;white-space:nowrap;box-shadow:0 6px 16px rgba(35,38,74,.25);transition:transform .15s}
+.ob-cta:hover{transform:translateY(-2px)}
+.ob-cta:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.ob-spark{position:absolute;color:#fff;font-size:1.1rem;opacity:0;animation:obTwinkle 3s ease-in-out infinite;pointer-events:none}
+.ob-spark:nth-of-type(1){left:6%;top:18%}.ob-spark:nth-of-type(2){right:8%;top:14%;animation-delay:1s;font-size:.9rem}.ob-spark:nth-of-type(3){left:46%;bottom:10%;animation-delay:2s;font-size:.8rem}
+@keyframes obTwinkle{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1.15) rotate(90deg)}}
+@media (max-width:560px){.offerbar{padding:12px 16px;gap:10px 14px}.ob-txt{flex:1;min-width:170px}.ob-cta{width:100%;justify-content:center;min-height:44px}}
 .price s.was{color:var(--muted);font-weight:500;margin-right:2px}
 .price .off{display:inline-block;background:var(--gold);color:#23264A;font-size:.72rem;font-weight:700;padding:2px 6px;border-radius:999px;vertical-align:1px}
 .lp s{color:var(--muted)}
@@ -554,7 +588,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
 <div style="background:#FFC63A;color:#1E2140;text-align:center;font:600 .9rem/1.4 system-ui,sans-serif;padding:8px 16px">Test site · for preview only. Orders placed here are not shipped.</div>
 <a class="skip" href="#top">Skip to content</a>
 
-<div class="offerbar" id="offerbar" role="status" hidden></div>
+<div class="offerbar" id="offerbar" role="region" hidden></div>
 <header class="top">
   <div class="wrap">
     <a class="wm" href="#top"><span class="t">TADA</span><span class="s" aria-hidden="true">✦</span><span class="b">BOO</span></a>
@@ -648,6 +682,13 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
       </div>
       <div class="tabs" id="catTabs" role="group" aria-label="Categories"></div>
       <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="revsec" id="reviews" aria-labelledby="revTitle" hidden>
+    <div class="wrap">
+      <div class="head"><div><span class="kick">Happy customers</span><h2 id="revTitle">What our customers say</h2></div></div>
+      <div class="revs" id="revList"></div>
     </div>
   </section>
 
@@ -1510,12 +1551,26 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
   const priceTag = (x) => x.list > x.price ? `<span class="price"><s class="was">${inr(x.list)}</s> ${inr(x.price)} <span class="off">−${Math.round((1 - x.price / x.list) * 100)}%</span></span>` : `<span class="price">${inr(x.price)}</span>`;
   const offerNote = (x) => x.list > x.price ? `<span class="worth">${esc(x.why === "Sale" ? "On sale" : x.why)}: you save ${inr(x.list - x.price)}</span>` : "";
   const wasNote = (k) => { const x = (k[0] === "b" ? B : P)[k.slice(2)]; return x.list > x.price ? ` (${x.why}, was ${inr(x.list)})` : ""; };
+  // The biggest running offer, with a live countdown when it ends within two days.
+  let obTimer;
   function renderOfferBar() {
     const o = OFFERS.slice().sort((a, b) => b.pct - a.pct)[0], bar = $("#offerbar");
+    clearInterval(obTimer);
     if (!o) { bar.hidden = true; return; }
-    const until = new Date(o.to + "T12:00:00").toLocaleDateString("en-IN", { day: "numeric", month: "short" });
-    bar.innerHTML = `<b>${esc(o.name)}</b> · ${o.pct}% off ${o.scope === "bags" ? "gift bags" : o.scope === "items" ? "single items" : "everything"} · till ${until}${OFFERS.length > 1 ? ` · +${OFFERS.length - 1} more offer${OFFERS.length > 2 ? "s" : ""}` : ""}`;
+    const ends = new Date(o.to + "T23:59:59+05:30"), what = o.scope === "bags" ? "on gift bags" : o.scope === "items" ? "on single items" : "on everything";
+    const left = () => {
+      const ms = ends - Date.now(); if (ms <= 0) return "ends today";
+      const h = Math.floor(ms / 3600000), m = Math.floor((ms % 3600000) / 60000);
+      return h < 48 ? `ends in ${h ? h + "h " : ""}${m}m` : "till " + ends.toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "Asia/Kolkata" });
+    };
+    const target = o.scope === "items" ? "#shop" : "#bags";
+    bar.innerHTML = `<span class="ob-spark" aria-hidden="true">✦</span><span class="ob-spark" aria-hidden="true">✦</span><span class="ob-spark" aria-hidden="true">✦</span>
+      <span class="ob-pct" aria-hidden="true">${o.pct}%<small>OFF</small></span>
+      <span class="ob-txt"><span class="ob-name">${esc(o.name)}</span><span class="ob-sub">${o.pct}% off ${what} <span class="ob-time" id="obTime">${left()}</span>${OFFERS.length > 1 ? ` · +${OFFERS.length - 1} more offer${OFFERS.length > 2 ? "s" : ""}` : ""}</span></span>
+      <a class="ob-cta" href="${target}">Shop the sale <span aria-hidden="true">→</span></a>`;
+    bar.setAttribute("aria-label", `${o.name}: ${o.pct}% off ${what}, ${left()}`);
     bar.hidden = false;
+    obTimer = setInterval(() => { const t = $("#obTime"); if (t) t.textContent = left(); }, 30000);
   }
   function applyStock() {
     const pr = isObj(STOCK.prices) ? STOCK.prices : {}, bp = isObj(STOCK.bagPrices) ? STOCK.bagPrices : {};
@@ -1548,6 +1603,28 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
     const pr = e.target.closest("[data-prod]"); if (pr) openDrawer({ product: pr.dataset.prod });
     const ob = e.target.closest("[data-openbag]"); if (ob) { detailQty = 1; openDrawer({ bag: ob.dataset.openbag }); }
   });
+
+  // ---------- Reviews (reviews.json, from the Stockroom's Reviews screen) ----------
+  // Only reviews the owner marked "Show on website" with the customer's consent are in the file.
+  const boughtKey = (v) => { v = String(v || ""); if (v.startsWith("b:cat-")) { const id = v.slice(6); return own(B, id) ? "b:" + id : ""; } if (v.startsWith("i:")) { const p = T.products.find((x) => x.sid === v.slice(2)); return p ? "p:" + p.id : ""; } return ""; };
+  function renderReviews(list) {
+    const ok = list.filter((r) => isObj(r) && String(r.quote || "").trim()).slice(0, 12);
+    $("#reviews").hidden = !ok.length; if (!ok.length) return;
+    $("#revList").innerHTML = ok.map((r, i) => {
+      const k = boughtKey(r.bought), photo = /^data:image\/(jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(r.photo || "") ? r.photo : "";
+      const rating = Math.round(Number(r.rating)) || 0;
+      return `<figure class="rev p${(i % 4) + 1}"><div class="who">${photo ? `<img src="${photo}" alt="" width="56" height="56" loading="lazy">` : `<span class="ini" aria-hidden="true">${esc(String(r.name || "?").trim().charAt(0).toUpperCase())}</span>`}
+        <span><b>${esc(r.name || "Customer")}</b>${r.city ? `<span>${esc(r.city)}</span>` : ""}</span></div>
+        ${rating >= 1 && rating <= 5 ? `<span class="stars" role="img" aria-label="${rating} out of 5 stars">${"★".repeat(rating)}${"☆".repeat(5 - rating)}</span>` : ""}
+        <blockquote>${esc(r.quote)}</blockquote>
+        ${k ? `<figcaption class="got">Bought: <button type="button" ${k[0] === "b" ? `data-openbag="${k.slice(2)}"` : `data-prod="${k.slice(2)}"`}>${esc(nameOf(k))}</button></figcaption>` : ""}</figure>`;
+    }).join("");
+  }
+  $("#reviews").addEventListener("click", (e) => {
+    const pr = e.target.closest("[data-prod]"); if (pr) openDrawer({ product: pr.dataset.prod });
+    const ob = e.target.closest("[data-openbag]"); if (ob) { detailQty = 1; openDrawer({ bag: ob.dataset.openbag }); }
+  });
+  fetch("reviews.json", { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).then((d) => { if (isObj(d) && Array.isArray(d.reviews)) renderReviews(d.reviews); }).catch(() => {});
 
   // ---------- Render ----------
   function renderAll() {
