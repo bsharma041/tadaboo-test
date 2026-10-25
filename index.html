@@ -7,6 +7,7 @@
 <title>TadaBoo Land</title>
 <meta name="description" content="TadaBoo: curated stationery and ready-to-gift bags. Thoughtfully packed, lovingly gifted. Order online or on WhatsApp.">
 <meta name="theme-color" content="#FFF8F0">
+<meta name="color-scheme" content="light only">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TadaBoo">
 <meta property="og:title" content="TadaBoo: little things that make you go tada">
@@ -44,26 +45,13 @@
   --sky-i:#2F7FC1; --mint-i:#2E9A63; --butter-i:#E7A400; --blush-i:#E0577D;
   --btn:#23264A; --btn-fg:#FFFFFF; --band:#23264A; --band-fg:#FFFFFF; --band-muted:#C9CBDD;
   --ok:#1E7A5C; --warn-bg:#FBF1DE; --wa:#0F7A3F;
-  --shadow:0 12px 32px rgba(35,38,74,.12);
+  --shadow:0 12px 32px rgba(35,38,74,.12); color-scheme:light;
   --f-display:"Bricolage Grotesque","Figtree","Segoe UI",system-ui,sans-serif;
   --f-body:"Figtree","Segoe UI",system-ui,sans-serif;
   --f-mark:"Fredoka","Trebuchet MS",system-ui,sans-serif;
   --max:1200px; --gutter:clamp(16px,3vw,24px);
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#14151F; --card:#1C1E2B; --stone:#1A1C28; --tile:#232634; --ink:#F4F1EC; --muted:#A9ABBE; --line:#2A2D3D; --line-strong:#454A60;
-  --accent:#FF8A55; --price:#FF9A6A; --gold:#F2C35C; --orange:#FF8A55; --teal:#5CCFC4;
-  --sky:#18263A; --mint:#172B24; --butter:#2C2717; --blush:#2E1C25;
-  --sky-i:#7DB8EA; --mint-i:#6FD0A0; --butter-i:#F2C35C; --blush-i:#F28DAA;
-  --btn:#F4F1EC; --btn-fg:#14151F; --band:#232634; --band-fg:#F4F1EC; --band-muted:#B9BBCC;
-  --ok:#5AD3B0; --warn-bg:#33291A; --wa:#0F7A3F; --shadow:0 12px 32px rgba(0,0,0,.4); color-scheme:dark }}
-:root[data-theme="dark"]{
-  --bg:#14151F; --card:#1C1E2B; --stone:#1A1C28; --tile:#232634; --ink:#F4F1EC; --muted:#A9ABBE; --line:#2A2D3D; --line-strong:#454A60;
-  --accent:#FF8A55; --price:#FF9A6A; --gold:#F2C35C; --orange:#FF8A55; --teal:#5CCFC4;
-  --sky:#18263A; --mint:#172B24; --butter:#2C2717; --blush:#2E1C25;
-  --sky-i:#7DB8EA; --mint-i:#6FD0A0; --butter-i:#F2C35C; --blush-i:#F28DAA;
-  --btn:#F4F1EC; --btn-fg:#14151F; --band:#232634; --band-fg:#F4F1EC; --band-muted:#B9BBCC;
-  --ok:#5AD3B0; --warn-bg:#33291A; --wa:#0F7A3F; --shadow:0 12px 32px rgba(0,0,0,.4); color-scheme:dark }
+/* Always the light, colourful catalogue look, even when a visitor's phone is in dark mode. */
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
