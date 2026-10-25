@@ -290,6 +290,9 @@ footer .wm{font-size:1.25rem}
 .placed h3{font-size:1.4rem}
 .placed .oid{font:600 1rem var(--f-display);letter-spacing:.04em;padding:6px 14px;border:1px dashed var(--line-strong);border-radius:999px}
 .placed .totals,.placed ul{align-self:stretch;text-align:left}
+.payqr{align-self:stretch;background:var(--card);border:2px dashed var(--line-strong);border-radius:20px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.payqr .qrimg img{width:220px;height:220px;image-rendering:pixelated;border-radius:8px;background:#fff}
+.payqr .qrwait{display:grid;place-items:center;width:220px;height:220px;color:var(--muted)}
 .placed ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:4px;font-size:.9rem;color:var(--muted)}
 .lastorder{font-size:.9rem}
 .emptybag{text-align:center;padding:40px 10px;color:var(--muted);display:flex;flex-direction:column;gap:14px;align-items:center}
@@ -760,7 +763,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
 <p class="sr" id="live" role="status" aria-live="polite"></p>
 
 <!-- Bump ?v= when catalog.js gains fields the page needs, so no buyer runs a new page on a cached old catalogue. -->
-<script src="catalog.js?v=6"></script>
+<script src="catalog.js?v=7"></script>
 <script>
 (() => {
   const T = window.TADABOO;
@@ -1067,7 +1070,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
   // Drawer header: Back on the left, "Your bag" on the right. The title stays for screen readers.
   const backBtn = `<button class="back" data-back><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>Back</button>`;
   // Checkout steps: 0 bag, 1 delivery details, 2 pay.
-  const progress = (step) => `<ol class="progress" aria-label="Checkout steps">${["Bag", "Delivery", /^[\w.\-]{2,}@[a-zA-Z]{2,}$/.test(T.upi || "") ? "Pay by UPI" : "Pay (we'll confirm)"].map((l, i) => `<li class="${i < step ? "done" : i === step ? "on" : ""}"${i === step ? ' aria-current="step"' : ""}>${i < step ? "✓" : i + 1} · ${l}</li>`).join("")}</ol>`;
+  const progress = (step) => `<ol class="progress" aria-label="Checkout steps">${["Bag", "Delivery", UPI_ID || UPI_QR ? "Pay by UPI" : "Pay (we'll confirm)"].map((l, i) => `<li class="${i < step ? "done" : i === step ? "on" : ""}"${i === step ? ' aria-current="step"' : ""}>${i < step ? "✓" : i + 1} · ${l}</li>`).join("")}</ol>`;
   function header(title, { back = false, toBag = false } = {}) {
     const h = $("#drawerTitle"); h.textContent = title; h.classList.toggle("sr", back || toBag);
     $("#drawerLead").innerHTML = back ? backBtn : "";
@@ -1268,6 +1271,12 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
     document.head.append(sc);
   }).catch((err) => { sapiP = null; throw err; }));
   const PLACED_KEY = KEY + "-placed";
+  // UPI: an ID (catalog.js `upi`) lets the site make a QR with the exact amount and order ID;
+  // otherwise a fixed QR image from the bank or a UPI business app (catalog.js `upiQr`) is shown.
+  const UPI_ID = /^[\w.\-]{2,}@[a-zA-Z]{2,}$/.test(T.upi || "") ? T.upi : "";
+  const UPI_QR = /^img\/[\w.\-]+\.(png|jpe?g|webp)$/.test(T.upiQr || "") ? T.upiQr : "";
+  let qrLib = null;
+  const loadQr = () => qrLib || (qrLib = new Promise((res, rej) => { if (window.qrcode) return res(window.qrcode); const sc = document.createElement("script"); sc.src = "vendor/qrcode.js"; sc.onload = () => (window.qrcode ? res(window.qrcode) : rej()); sc.onerror = () => { qrLib = null; rej(); }; document.head.append(sc); }));
   const lastPlaced = () => { const o = load(PLACED_KEY); return typeof o.id === "string" && Number.isFinite(o.total) ? o : null; };
   // My orders: every order placed here or sent on WhatsApp, kept on this phone only (latest 20).
   const ORDERS_KEY = KEY + "-orders";
@@ -1356,6 +1365,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
       <h3>Thank you${first ? ", " + esc(first) : ""}!</h3>
       <span class="oid num">${esc(o.id)}</span>
       <p>We have your order. We'll call or WhatsApp you on <span class="num">${esc(o.phone || "")}</span> to confirm it.</p>
+      <div class="payqr" id="payqr" hidden></div>
       <ul>${(o.items || []).map((x) => `<li>${esc(x)}</li>`).join("")}</ul>
       <div class="totals">${Number.isFinite(o.ship) ? `<div class="r"><span>Items</span><span>${inr(o.sub)}</span></div>
         <div class="r"><span>Delivery to ${esc(o.region || "you")}</span><span>${o.ship ? inr(o.ship) : "Free"}</span></div>` : ""}
@@ -1364,7 +1374,7 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
       <div class="share"><b>Know someone with a party coming up?</b><span class="small" style="text-align:left">Share TadaBoo. Your favourites and this order stay saved on this device for next time.</span>
         <a class="btn line sm" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(`Found the cutest stationery and gift bags at TadaBoo ✦ ${location.origin}${location.pathname}`)}">Share on WhatsApp</a></div>
     </div>`;
-    const upi = /^[\w.\-]{2,}@[a-zA-Z]{2,}$/.test(T.upi || "") ? T.upi : "";
+    const upi = UPI_ID;
     const q = (o2) => Object.entries(o2).map(([k, v]) => k + "=" + encodeURIComponent(v).replace(/%40/g, "@")).join("&");
     const wa = `https://wa.me/${T.whatsapp}?text=${encodeURIComponent(`Hi TadaBoo! I placed order ${o.id} on the website.`)}`;
     const what = `Pay ${inr(o.total)}`;
@@ -1372,9 +1382,22 @@ footer .myo{background:none;border:0;cursor:pointer;font:inherit;font-weight:600
     // upi:// links open a UPI app on phones; on a computer, copying the UPI ID is what works.
     const desk = matchMedia("(hover: hover) and (pointer: fine)").matches;
     const note = `<span class="small">Pay to <b>${esc(upi)}</b> with note <span class="num">${esc(o.id)}</span>.</span>`;
+    const paidWa = `https://wa.me/${T.whatsapp}?text=${encodeURIComponent(`Hi TadaBoo! I've paid ${inr(o.total)} for order ${o.id}. Screenshot attached.`)}`;
+    // QR: exact amount and note when we have the UPI ID, else the fixed QR image.
+    const box = $("#payqr");
+    if (upi || UPI_QR) {
+      const head = desk ? "Scan to pay with any UPI app" : "Paying from another phone? Scan this";
+      const how = upi ? `Amount <b>${inr(o.total)}</b> and note <b class="num">${esc(o.id)}</b> are filled in for you.` : `Enter <b>${inr(o.total)}</b> and add <b class="num">${esc(o.id)}</b> as the note.`;
+      box.innerHTML = `<b>${head}</b><span class="qrimg">${UPI_QR && !upi ? `<img src="${UPI_QR}" alt="TadaBoo UPI QR code" width="220" height="220">` : `<span class="qrwait">Loading QR…</span>`}</span><span class="small">${how}</span><a class="link" target="_blank" rel="noopener" href="${paidWa}" style="min-height:36px">Paid? Send us the screenshot</a>`;
+      box.hidden = false;
+      if (upi) loadQr().then((q) => { const qr = q(0, "M"); qr.addData(link); qr.make(); const im = new Image(); im.src = qr.createDataURL(6, 2); im.alt = `UPI QR code to pay ${inr(o.total)} to TadaBoo`; im.width = im.height = 220; box.querySelector(".qrimg").replaceChildren(im); })
+        .catch(() => { box.querySelector(".qrimg").textContent = "Couldn't show the QR here. Use the UPI button or ID below."; });
+    }
     $("#drawerFoot").innerHTML = !upi
-      ? `<span class="small">We'll share payment details when we confirm your order.</span>
-      <a class="btn line" target="_blank" rel="noopener" href="${wa}">Questions? WhatsApp us</a>`
+      ? (UPI_QR ? `<a class="btn" target="_blank" rel="noopener" href="${paidWa}">I've paid · send screenshot</a>
+      <span class="small">Scan the QR above to pay ${inr(o.total)}. We confirm once payment arrives.</span>`
+        : `<span class="small">We'll share payment details when we confirm your order.</span>`) + `
+      <a class="btn line sm" target="_blank" rel="noopener" href="${wa}">Questions? WhatsApp us</a>`
       : desk
       ? `<button class="btn" data-copyupi type="button">Copy UPI ID to pay ${inr(o.total)}</button>${note}
       <a class="btn line sm" href="${link}">Open a UPI app</a>`
