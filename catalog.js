@@ -11,14 +11,14 @@ window.TADABOO = {
   customMin: 299, // custom bags: chosen items must total more than this
   deliveryDays: "7–10 days", // from order to the buyer's door, anywhere in India
   // Delivery: every order ships (no pickup). The checkout works out the charge from the buyer's PIN code.
-  // Items worth more than ₹999 ship free anywhere in India. Below that: ₹99 anywhere in India, or ₹149 to
+  // Items worth ₹999 or more ship free anywhere in India. Below that: ₹99 anywhere in India, or ₹149 to
   // the North East states (Assam, Arunachal Pradesh, Manipur, Meghalaya, Mizoram, Nagaland, Tripura: PIN 78–79;
   // Sikkim: 737). `home` is our own state (Maharashtra and Goa, 40–44); it pays the same as the rest of India.
   delivery: {
     home: ["40", "41", "42", "43", "44"],
     remote: ["78", "79", "737"],
     rates: { home: 99, india: 99, remote: 149 },
-    freeAbove: 1000, // items of ₹1,000 or more (i.e. above ₹999) ship free
+    freeAbove: 999, // items of ₹999 or more ship free
     // Estimated arrival shown at checkout: [earliest, latest] calendar days after the order, by zone.
     // Keep in step with `deliveryDays` above.
     arrivalDays: { home: [7, 10], india: [7, 10], remote: [7, 10] },
